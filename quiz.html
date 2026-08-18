@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repaso — Multiple Choice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================================
+   PALETA Y TIPOGRAFÍA — editá SOLO este bloque para cambiar el aspecto.
+   Todo el CSS de abajo usa estas variables, no hay colores sueltos.
+   =========================================================================== */
+:root {
+  --bg-body:         #0c1210;  /* fondo general de la página */
+  --bg-panel:        #15201c;  /* fondo de tarjetas y paneles */
+  --bg-panel-alt:    #1c2a25;  /* fondo de botones de opción / hover */
+  --border-subtle:   #2a3a34;  /* bordes de tarjetas y botones */
+
+  --text-primary:    #eef2f0;  /* texto principal */
+  --text-muted:      #93a39c;  /* texto secundario */
+
+  --accent:          #d4af37;  /* color de acento (botones principales, títulos) */
+  --accent-text:     #1a1408;  /* texto sobre el color de acento */
+
+  --correct-bg:      #123d24;  /* fondo de respuesta correcta */
+  --correct-fg:      #3ddc84;  /* texto/borde de respuesta correcta */
+  --incorrect-bg:    #401414;  /* fondo de respuesta incorrecta */
+  --incorrect-fg:    #ff6b6b;  /* texto/borde de respuesta incorrecta */
+
+  --warn-bg:         #3a2f10;  /* fondo del aviso de errores de formato */
+  --warn-fg:         #e8c96a;  /* texto del aviso de errores de formato */
+
+  --radius:          14px;     /* redondeo de bordes */
+  --font-body:       'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --max-width:       860px;    /* ancho máximo del contenido en pantallas grandes */
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 3vw, 1.5rem) 3rem;
+  background: var(--bg-body);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+main { max-width: var(--max-width); margin: 0 auto; }
+
+h1, h2, h3 { margin: 0 0 0.5rem; line-height: 1.25; }
+h1 { font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.1rem); color: var(--accent); }
+h2 { font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem); }
+p  { margin: 0 0 0.75rem; }
+
+.muted { color: var(--text-muted); }
+.screen-header { margin-bottom: 1.5rem; }
+
+/* --------------------------------------------------------------------------
+   Tarjetas y grillas
+   -------------------------------------------------------------------------- */
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 1.25rem 1.4rem;
+}
+
+/* auto-fit + minmax: varias columnas en pantalla ancha, una sola en celular */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* Tarjeta clickeable (materia o nivel disponible) */
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  min-height: 96px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.tile:hover:not(.tile--locked),
+.tile:focus-visible:not(.tile--locked) {
+  border-color: var(--accent);
+  background: var(--bg-panel-alt);
+  transform: translateY(-2px);
+}
+
+.tile--locked {
+  opacity: 0.45;
+  filter: grayscale(0.6);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.tile__title { font-weight: 600; font-size: 1.05rem; }
+.tile__meta  { color: var(--text-muted); font-size: 0.85rem; }
+
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--correct-fg);
+  color: var(--correct-fg);
+  background: var(--correct-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Botones
+   -------------------------------------------------------------------------- */
+button {
+  font-family: inherit;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-panel);
+  color: var(--text-primary);
+  padding: 0.7rem 1.1rem;
+  min-height: 44px; /* área táctil cómoda en celular */
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.btn-row button { flex: 1 1 200px; }
+
+/* --------------------------------------------------------------------------
+   Pantalla de pregunta
+   -------------------------------------------------------------------------- */
+.question-progress {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.question-text {
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.3rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.options { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.option {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-panel-alt);
+  padding: 0.85rem 1rem;
+  line-height: 1.45;
+}
+
+.option:hover:not(:disabled) { border-color: var(--accent); }
+.option:disabled { cursor: default; }
+
+.option__letter { font-weight: 700; color: var(--text-muted); flex: 0 0 auto; }
+
+.option--correct {
+  background: var(--correct-bg);
+  border-color: var(--correct-fg);
+  color: var(--correct-fg);
+}
+.option--correct .option__letter { color: var(--correct-fg); }
+
+.option--incorrect {
+  background: var(--incorrect-bg);
+  border-color: var(--incorrect-fg);
+  color: var(--incorrect-fg);
+}
+.option--incorrect .option__letter { color: var(--incorrect-fg); }
+
+.feedback { margin-top: 1.1rem; font-weight: 600; }
+.feedback--correct   { color: var(--correct-fg); }
+.feedback--incorrect { color: var(--incorrect-fg); }
+
+/* --------------------------------------------------------------------------
+   Resultado y avisos
+   -------------------------------------------------------------------------- */
+.result-score {
+  font-size: clamp(2rem, 1.5rem + 3vw, 3rem);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0.5rem 0;
+}
+
+.result-status--passed { color: var(--correct-fg); font-weight: 600; }
+.result-status--failed { color: var(--incorrect-fg); font-weight: 600; }
+
+.notice {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-fg);
+  border-radius: var(--radius);
+  color: var(--warn-fg);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.empty-state { color: var(--text-muted); }
+</style>
+</head>
+<body>
+<main id="app"></main>
+
+<!-- Archivos de materias. Cada uno define MATERIA_ID_*, MATERIA_NOMBRE_* y PREGUNTAS_RAW_*.
+     Para agregar una materia nueva: copiá preguntas.js con otro sufijo de variables,
+     agregá acá su <script src="..."> y sumala al array MATERIAS_DISPONIBLES de abajo.
+     (Ver README.md para el paso a paso.) -->
+<script src="preguntas.js"></script>
+
+<script>
+// ===========================================================================
+// REGISTRO DE MATERIAS — la única parte a editar al agregar una materia nueva
+// ===========================================================================
+const MATERIAS_DISPONIBLES = [
+  { id: MATERIA_ID_AAW, nombre: MATERIA_NOMBRE_AAW, raw: PREGUNTAS_RAW_AAW },
+];
+
+// ===========================================================================
+// PARSER DEL FORMATO DE TEXTO PLANO
+// (la especificación completa está comentada al inicio de preguntas.js)
+// ===========================================================================
+
+const LEVEL_HEADER_RE  = /^##\s*Nivel\s+(\d+)\s*:\s*(.+?)\s*$/;
+const QUESTION_HEAD_RE = /^(\d+)\.\s*(.+?)\s*$/;
+const OPTION_RE        = /^(\*)?\s*([abcdABCD])\)\s*(.+?)\s*$/;
+
+// Divide el texto crudo en bloques de nivel, usando las líneas "## Nivel N: ..."
+// como separadores. Devuelve el texto que hay entre cada header y el siguiente.
+function splitLevelBlocks(raw) {
+  const lines = raw.split('\n');
+  const headers = [];
+
+  lines.forEach((line, index) => {
+    const match = line.match(LEVEL_HEADER_RE);
+    if (match) {
+      headers.push({ index, declaredNumber: Number(match[1]), name: match[2] });
+    }
+  });
+
+  return headers.map((header, i) => {
+    const end = i + 1 < headers.length ? headers[i + 1].index : lines.length;
+    return {
+      declaredNumber: header.declaredNumber,
+      name: header.name,
+      bodyLines: lines.slice(header.index + 1, end),
+    };
+  });
+}
+
+// Parsea un bloque de pregunta (encabezado + 4 opciones). Devuelve null y loguea
+// un error preciso si el bloque no cumple el formato, para que el resto de la
+// app siga funcionando en lugar de romperse por una sola pregunta mal escrita.
+function parseQuestionBlock(blockLines, materiaNombre, levelNumber, levelName) {
+  const lines = blockLines.map(l => l.trim()).filter(l => l.length > 0);
+  const ubicacion = `${materiaNombre} — Nivel ${levelNumber} ("${levelName}")`;
+
+  const headMatch = lines[0].match(QUESTION_HEAD_RE);
+  if (!headMatch) {
+    console.error(`${ubicacion}: bloque sin encabezado de pregunta válido ("N. texto"). Se encontró: "${lines[0]}"`);
+    return null;
+  }
+
+  const sourceIndex = Number(headMatch[1]);
+  const text = headMatch[2];
+  const options = [];
+
+  for (const line of lines.slice(1)) {
+    const optionMatch = line.match(OPTION_RE);
+    if (!optionMatch) {
+      console.error(`${ubicacion}, pregunta ${sourceIndex}: línea con formato de opción inválido: "${line}"`);
+      return null;
+    }
+    options.push({
+      letter: optionMatch[2].toLowerCase(),
+      text: optionMatch[3],
+      isCorrect: Boolean(optionMatch[1]),
+    });
+  }
+
+  const letters = new Set(options.map(o => o.letter));
+  if (options.length !== 4 || letters.size !== 4) {
+    console.error(`${ubicacion}, pregunta ${sourceIndex}: se esperaban exactamente 4 opciones distintas (a, b, c, d), se encontraron ${options.length}.`);
+    return null;
+  }
+
+  const correctCount = options.filter(o => o.isCorrect).length;
+  if (correctCount !== 1) {
+    console.error(`${ubicacion}, pregunta ${sourceIndex}: se encontraron ${correctCount} opciones marcadas como correctas (se esperaba exactamente 1, con "*" delante de la letra).`);
+    return null;
+  }
+
+  return { levelNumber, sourceIndex, text, options };
+}
+
+// Convierte el texto crudo de una materia en su lista de niveles con preguntas.
+// Devuelve también cuántas preguntas se descartaron por errores de formato.
+function parsePreguntas(raw, materiaNombre) {
+  const normalized = raw.replace(/\r\n/g, '\n');
+  const levelBlocks = splitLevelBlocks(normalized);
+  const levels = [];
+  let skippedCount = 0;
+
+  levelBlocks.forEach((block, i) => {
+    // El número de nivel real es el orden de aparición en el archivo: así un
+    // typo en "## Nivel N" no rompe el desbloqueo secuencial de niveles.
+    const levelNumber = i + 1;
+    if (block.declaredNumber !== levelNumber) {
+      console.warn(`${materiaNombre}: el nivel "${block.name}" está declarado como "Nivel ${block.declaredNumber}" pero aparece en la posición ${levelNumber}. Se usa el orden de aparición.`);
+    }
+
+    // Las preguntas se separan entre sí por una o más líneas en blanco.
+    const questionBlocks = block.bodyLines
+      .join('\n')
+      .trim()
+      .split(/\n\s*\n+/)
+      .map(b => b.split('\n'))
+      .filter(b => b.some(line => line.trim().length > 0));
+
+    const questions = [];
+    for (const questionBlock of questionBlocks) {
+      const question = parseQuestionBlock(questionBlock, materiaNombre, levelNumber, block.name);
+      if (question) {
+        questions.push(question);
+      } else {
+        skippedCount++;
+      }
+    }
+
+    if (questions.length === 0) {
+      console.error(`${materiaNombre} — Nivel ${levelNumber} ("${block.name}") no tiene preguntas válidas y quedará deshabilitado.`);
+    }
+
+    levels.push({ number: levelNumber, name: block.name, questions });
+  });
+
+  return { levels, skippedCount };
+}
+
+// ===========================================================================
+// PROGRESO (localStorage, separado por materia)
+// ===========================================================================
+
+const STORAGE_KEY = 'quizAppProgress_v2';
+
+function getDefaultProgress() {
+  return { version: 2, materias: {} };
+}
+
+function loadProgress() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return getDefaultProgress();
+    const parsed = JSON.parse(stored);
+    if (!parsed || typeof parsed !== 'object' || typeof parsed.materias !== 'object') {
+      return getDefaultProgress();
+    }
+    return parsed;
+  } catch (error) {
+    console.error('No se pudo leer el progreso guardado, se empieza de cero.', error);
+    return getDefaultProgress();
+  }
+}
+
+function saveProgress(progress) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  } catch (error) {
+    console.error('No se pudo guardar el progreso.', error);
+  }
+}
+
+function getMateriaProgress(materiaId, progress) {
+  return progress.materias[materiaId] || { passedLevels: [], lastAttempts: {} };
+}
+
+function isLevelUnlocked(materiaId, levelNumber, progress) {
+  if (levelNumber === 1) return true;
+  return getMateriaProgress(materiaId, progress).passedLevels.includes(levelNumber - 1);
+}
+
+// Registra el resultado de un intento. Un nivel aprobado (100%) queda aprobado
+// para siempre: un reintento fallido posterior nunca vuelve a bloquearlo.
+function recordAttempt(materiaId, levelNumber, correct, total, progress) {
+  const materiaProgress = getMateriaProgress(materiaId, progress);
+  const passed = total > 0 && correct === total;
+
+  materiaProgress.lastAttempts[String(levelNumber)] = { correct, total, passed };
+  if (passed && !materiaProgress.passedLevels.includes(levelNumber)) {
+    materiaProgress.passedLevels.push(levelNumber);
+  }
+
+  progress.materias[materiaId] = materiaProgress;
+  saveProgress(progress);
+  return passed;
+}
+
+function resetMateriaProgress(materiaId, progress) {
+  delete progress.materias[materiaId];
+  saveProgress(progress);
+}
+
+// ===========================================================================
+// ESTADO Y UTILIDADES
+// ===========================================================================
+
+const state = {
+  screen: 'subjects',       // 'subjects' | 'levels' | 'question' | 'result'
+  materias: [],
+  progress: null,
+  currentMateriaIndex: -1,
+  currentLevelIndex: -1,
+  sessionQuestions: [],
+  currentQuestionIndex: 0,
+  correctCount: 0,
+  answered: false,
+  selectedLetter: null,
+};
+
+// Fisher-Yates, sin mutar el array original.
+function shuffleArray(array) {
+  const copy = array.slice();
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function currentMateria() {
+  return state.materias[state.currentMateriaIndex];
+}
+
+function currentLevel() {
+  return currentMateria().levels[state.currentLevelIndex];
+}
+
+// ===========================================================================
+// RENDER
+// ===========================================================================
+
+const app = document.getElementById('app');
+
+function render() {
+  app.innerHTML = '';
+  if (state.screen === 'subjects') renderSubjects();
+  else if (state.screen === 'levels') renderLevels();
+  else if (state.screen === 'question') renderQuestion();
+  else if (state.screen === 'result') renderResult();
+  window.scrollTo(0, 0);
+}
+
+function renderParseNotice() {
+  const conErrores = state.materias.filter(
+    m => m.skippedCount > 0 || m.levels.some(l => l.questions.length === 0)
+  );
+  if (conErrores.length === 0) return null;
+
+  const totalIgnoradas = conErrores.reduce((sum, m) => sum + m.skippedCount, 0);
+  const notice = document.createElement('div');
+  notice.className = 'notice';
+  notice.textContent =
+    `⚠ Se ignoraron ${totalIgnoradas} pregunta(s) por errores de formato en: ` +
+    `${conErrores.map(m => m.nombre).join(', ')}. Abrí la consola del navegador (F12) para ver el detalle.`;
+  return notice;
+}
+
+function renderSubjects() {
+  const header = document.createElement('div');
+  header.className = 'screen-header';
+  header.innerHTML = '<h1>Repaso</h1><p class="muted">Elegí una materia para empezar.</p>';
+  app.appendChild(header);
+
+  const notice = renderParseNotice();
+  if (notice) app.appendChild(notice);
+
+  if (state.materias.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'card empty-state';
+    empty.textContent = 'No hay materias cargadas. Revisá el registro MATERIAS_DISPONIBLES en quiz.html y el README.';
+    app.appendChild(empty);
+    return;
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  state.materias.forEach((materia, index) => {
+    const jugables = materia.levels.filter(l => l.questions.length > 0);
+    const aprobados = getMateriaProgress(materia.id, state.progress).passedLevels.length;
+    const completa = jugables.length > 0 && aprobados >= jugables.length;
+    const sinContenido = jugables.length === 0;
+
+    const tile = document.createElement('button');
+    tile.className = 'card tile' + (sinContenido ? ' tile--locked' : '');
+    tile.innerHTML =
+      `<span class="tile__title">${escapeHtml(materia.nombre)}</span>` +
+      `<span class="tile__meta">${sinContenido
+        ? 'Sin preguntas válidas — revisá la consola'
+        : `${jugables.length} nivel(es) · ${aprobados} aprobado(s)`}</span>` +
+      (completa ? '<span class="badge">Completada ✓</span>' : '');
+
+    if (sinContenido) {
+      tile.disabled = true;
+    } else {
+      tile.addEventListener('click', () => openMateria(index));
+    }
+    grid.appendChild(tile);
+  });
+
+  app.appendChild(grid);
+}
+
+function renderLevels() {
+  const materia = currentMateria();
+  const materiaProgress = getMateriaProgress(materia.id, state.progress);
+
+  const header = document.createElement('div');
+  header.className = 'screen-header';
+  header.innerHTML =
+    `<h1>${escapeHtml(materia.nombre)}</h1>` +
+    '<p class="muted">Aprobá un nivel con el 100% de aciertos para desbloquear el siguiente.</p>';
+  app.appendChild(header);
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  materia.levels.forEach((level, index) => {
+    const sinPreguntas = level.questions.length === 0;
+    const bloqueado = !isLevelUnlocked(materia.id, level.number, state.progress);
+    const aprobado = materiaProgress.passedLevels.includes(level.number);
+    const deshabilitado = sinPreguntas || bloqueado;
+
+    let meta;
+    if (sinPreguntas) meta = 'Sin preguntas válidas — revisá la consola';
+    else if (bloqueado) meta = '🔒 Aprobá el nivel anterior para desbloquear';
+    else meta = `${level.questions.length} pregunta(s)`;
+
+    const tile = document.createElement('button');
+    tile.className = 'card tile' + (deshabilitado ? ' tile--locked' : '');
+    tile.innerHTML =
+      `<span class="tile__title">Nivel ${level.number}: ${escapeHtml(level.name)}</span>` +
+      `<span class="tile__meta">${meta}</span>` +
+      (aprobado ? '<span class="badge">Aprobado ✓</span>' : '');
+
+    if (deshabilitado) {
+      tile.disabled = true;
+    } else {
+      tile.addEventListener('click', () => startLevel(index));
+    }
+    grid.appendChild(tile);
+  });
+
+  app.appendChild(grid);
+
+  const row = document.createElement('div');
+  row.className = 'btn-row';
+
+  const back = document.createElement('button');
+  back.textContent = '← Volver a materias';
+  back.addEventListener('click', () => { state.screen = 'subjects'; render(); });
+
+  const reset = document.createElement('button');
+  reset.textContent = 'Reiniciar progreso de esta materia';
+  reset.addEventListener('click', () => handleReset(materia));
+
+  row.appendChild(back);
+  row.appendChild(reset);
+  app.appendChild(row);
+}
+
+function renderQuestion() {
+  const question = state.sessionQuestions[state.currentQuestionIndex];
+  const total = state.sessionQuestions.length;
+
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const progress = document.createElement('div');
+  progress.className = 'question-progress';
+  progress.textContent = `${currentMateria().nombre} · Nivel ${currentLevel().number} · Pregunta ${state.currentQuestionIndex + 1} de ${total}`;
+  card.appendChild(progress);
+
+  const text = document.createElement('div');
+  text.className = 'question-text';
+  text.textContent = question.text;
+  card.appendChild(text);
+
+  const options = document.createElement('div');
+  options.className = 'options';
+
+  question.options.forEach((option, i) => {
+    const button = document.createElement('button');
+    button.className = 'option';
+
+    // Con la respuesta ya dada: se marca la elegida y, si se falló, también la correcta.
+    if (state.answered) {
+      button.disabled = true;
+      const elegida = option.letter === state.selectedLetter;
+      if (option.isCorrect) button.classList.add('option--correct');
+      else if (elegida) button.classList.add('option--incorrect');
+    } else {
+      button.addEventListener('click', () => handleOptionClick(option));
+    }
+
+    button.innerHTML =
+      `<span class="option__letter">${'abcd'[i]})</span><span>${escapeHtml(option.text)}</span>`;
+    options.appendChild(button);
+  });
+
+  card.appendChild(options);
+
+  if (state.answered) {
+    const acerto = question.options.some(o => o.isCorrect && o.letter === state.selectedLetter);
+    const feedback = document.createElement('div');
+    feedback.className = 'feedback ' + (acerto ? 'feedback--correct' : 'feedback--incorrect');
+    feedback.textContent = acerto ? '¡Correcto!' : 'Incorrecto — la respuesta correcta está marcada en verde.';
+    card.appendChild(feedback);
+
+    const row = document.createElement('div');
+    row.className = 'btn-row';
+    const next = document.createElement('button');
+    next.className = 'btn-primary';
+    next.textContent = state.currentQuestionIndex + 1 < total ? 'Siguiente pregunta' : 'Ver resultado';
+    next.addEventListener('click', goToNextQuestion);
+    row.appendChild(next);
+    card.appendChild(row);
+  }
+
+  app.appendChild(card);
+}
+
+function renderResult() {
+  const materia = currentMateria();
+  const level = currentLevel();
+  const total = state.sessionQuestions.length;
+  const passed = state.correctCount === total;
+  const nextLevel = materia.levels[state.currentLevelIndex + 1];
+
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML =
+    `<h2>Nivel ${level.number}: ${escapeHtml(level.name)}</h2>` +
+    `<div class="result-score">${state.correctCount}/${total}</div>` +
+    `<p class="${passed ? 'result-status--passed' : 'result-status--failed'}">` +
+    (passed
+      ? '¡Nivel aprobado! Se desbloqueó el siguiente nivel.'
+      : 'Nivel no aprobado. Se necesita el 100% de aciertos.') +
+    '</p>';
+
+  const row = document.createElement('div');
+  row.className = 'btn-row';
+
+  if (!passed) {
+    const retry = document.createElement('button');
+    retry.className = 'btn-primary';
+    retry.textContent = 'Reintentar nivel';
+    retry.addEventListener('click', () => startLevel(state.currentLevelIndex));
+    row.appendChild(retry);
+  } else if (nextLevel && nextLevel.questions.length > 0) {
+    const next = document.createElement('button');
+    next.className = 'btn-primary';
+    next.textContent = `Continuar al nivel ${nextLevel.number}`;
+    next.addEventListener('click', () => startLevel(state.currentLevelIndex + 1));
+    row.appendChild(next);
+  }
+
+  const back = document.createElement('button');
+  back.textContent = 'Volver a los niveles';
+  back.addEventListener('click', () => { state.screen = 'levels'; render(); });
+  row.appendChild(back);
+
+  card.appendChild(row);
+  app.appendChild(card);
+}
+
+// ===========================================================================
+// ACCIONES
+// ===========================================================================
+
+function openMateria(index) {
+  state.currentMateriaIndex = index;
+  state.screen = 'levels';
+  render();
+}
+
+// Baraja preguntas y opciones en cada intento (incluido cada reintento).
+function buildSessionQuestions(level) {
+  return shuffleArray(level.questions).map(question => ({
+    text: question.text,
+    options: shuffleArray(question.options),
+  }));
+}
+
+function startLevel(levelIndex) {
+  state.currentLevelIndex = levelIndex;
+  state.sessionQuestions = buildSessionQuestions(currentLevel());
+  state.currentQuestionIndex = 0;
+  state.correctCount = 0;
+  state.answered = false;
+  state.selectedLetter = null;
+  state.screen = 'question';
+  render();
+}
+
+function handleOptionClick(option) {
+  if (state.answered) return;
+  state.answered = true;
+  state.selectedLetter = option.letter;
+  if (option.isCorrect) state.correctCount++;
+  render();
+}
+
+function goToNextQuestion() {
+  if (state.currentQuestionIndex + 1 < state.sessionQuestions.length) {
+    state.currentQuestionIndex++;
+    state.answered = false;
+    state.selectedLetter = null;
+    render();
+  } else {
+    finishLevel();
+  }
+}
+
+function finishLevel() {
+  recordAttempt(
+    currentMateria().id,
+    currentLevel().number,
+    state.correctCount,
+    state.sessionQuestions.length,
+    state.progress
+  );
+  state.screen = 'result';
+  render();
+}
+
+function handleReset(materia) {
+  const confirmado = window.confirm(
+    `¿Seguro que querés reiniciar tu progreso en "${materia.nombre}"?\n\n` +
+    'Se volverán a bloquear todos sus niveles salvo el primero. ' +
+    'El progreso de las otras materias no se toca.'
+  );
+  if (!confirmado) return;
+  resetMateriaProgress(materia.id, state.progress);
+  render();
+}
+
+// ===========================================================================
+// INICIO
+// ===========================================================================
+
+function init() {
+  state.materias = MATERIAS_DISPONIBLES.map(entry => {
+    const { levels, skippedCount } = parsePreguntas(entry.raw, entry.nombre);
+    return { id: entry.id, nombre: entry.nombre, levels, skippedCount };
+  });
+  state.progress = loadProgress();
+  state.screen = 'subjects';
+  render();
+}
+
+init();
+</script>
+</body>
+</html>
