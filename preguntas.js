@@ -526,4 +526,264 @@ a) Rendimiento, por la velocidad de carga del feed principal
 b) Escalabilidad, por la cantidad de publicaciones simultáneas
 c) Disponibilidad, por la continuidad del servicio de mensajería
 *d) Modificabilidad, por la facilidad para agregar nuevas funciones al feed
+
+## Nivel 3: Arquitecturas de Software - Vistas
+
+1. Según la definición de Bass y Clements, ¿qué es la arquitectura de software de un sistema de computación?
+*a) El conjunto de estructuras necesarias para razonar sobre el sistema completo
+b) El conjunto de algoritmos necesarios para procesar los datos del sistema
+c) El conjunto de casos de uso necesarios para validar el sistema
+d) El conjunto de pruebas necesarias para certificar la calidad del sistema
+
+2. Según el material, ¿en términos de qué define la arquitectura al sistema?
+a) En términos de algoritmos y estructuras de datos internas del sistema
+*b) En términos de elementos e interacción con el sistema
+c) En términos de casos de test y su cobertura
+d) En términos de costos y plazos del proyecto
+
+3. Según el material, ¿qué correspondencia muestra la arquitectura de un sistema?
+a) La correspondencia entre el presupuesto y los recursos asignados
+b) La correspondencia entre el cliente y los stakeholders involucrados en el proyecto
+*c) La correspondencia entre los requerimientos y los elementos del sistema construido
+d) La correspondencia entre el cronograma y las entregas realizadas
+
+4. Según el material, ¿qué atributos de calidad resuelve la arquitectura a nivel del sistema?
+a) Usabilidad, auditabilidad, latencia y throughput
+b) Modificabilidad, testing, latencia y jitter
+c) Seguridad, integridad, confidencialidad y disponibilidad
+*d) Escalabilidad, flexibilidad, confiabilidad y performance
+
+5. Según la analogía con la ingeniería civil presentada, ¿a qué equivalen los estilos arquitectónicos (colonial, victoriano, griego)?
+*a) A los paradigmas de organización de sistemas de software modernos
+b) A los lenguajes de programación elegidos para cada proyecto
+c) A los estándares de calidad certificados por la industria del software
+d) A las metodologías ágiles utilizadas para el desarrollo del sistema
+
+6. Según la analogía con la ingeniería civil, ¿cómo se llaman las arquitecturas pensadas para un dominio específico, como hospitales o cárceles?
+a) Patrones de interacción específicos del dominio elegido
+*b) Arquitecturas de referencia para ese dominio
+c) Estilos arquitectónicos certificados del dominio
+d) Estructuras de referencia del sistema completo
+
+7. Según el material, ¿sobre qué trata la arquitectura de un sistema?
+a) Sobre el lenguaje de programación empleado para construir el sistema
+b) Sobre el presupuesto total asignado para desarrollar el proyecto
+*c) Sobre cómo el sistema se descompone en partes y cómo interactúan
+d) Sobre el cronograma completo de entregas realizadas en el proyecto
+
+8. Según el material, ¿qué tipos de estructuras pueden ser la base de una vista arquitectónica?
+a) Solo la estructura interna del código fuente del sistema
+b) Solo las estructuras de datos internas utilizadas por el sistema
+c) Solo los diagramas de clases y de secuencia del sistema
+*d) Del código, run-time, de deployment y del entorno de desarrollo del sistema
+
+9. Según el material, ¿en qué estuvo el foco históricamente al hablar de vistas arquitectónicas?
+*a) En las vistas de código fuente del sistema
+b) En las vistas de despliegue realizadas en la nube pública
+c) En las vistas de procesos de negocio
+d) En las vistas físicas de hardware
+
+10. Según Bass y Clements, ¿cómo se define un estilo o patrón arquitectónico?
+a) Solo un conjunto de pruebas automatizadas para el sistema ya completo
+*b) Como una descripción de tipos de relaciones y elementos, con restricciones de uso
+c) Solo un documento que detalla el presupuesto total del proyecto
+d) Solo un diagrama que muestra el cronograma completo de trabajo
+
+11. Según Bass y Clements, ¿cómo se define una arquitectura de referencia?
+a) Como un conjunto de pruebas de aceptación del cliente final
+b) Como un documento legal que regula todo el proyecto
+*c) Como una división común de funcionalidad mapeada a elementos que la implementan
+d) Como un cronograma detallado de las entregas finales del proyecto
+
+12. Según el material, ¿cuál es el primer principio fundamental sobre arquitectura?
+a) Solo las aplicaciones grandes tienen una arquitectura definida
+b) Ninguna aplicación necesita una arquitectura formal
+c) Solo los sistemas críticos requieren una arquitectura
+*d) Toda aplicación tiene una arquitectura definida
+
+13. Según el material, ¿cuál es el segundo principio fundamental sobre arquitectura?
+*a) Cada aplicación tiene al menos un arquitecto
+b) Cada aplicación necesita al menos diez desarrolladores
+c) Cada aplicación requiere un presupuesto ilimitado
+d) Cada aplicación debe tener un único usuario final
+
+14. Según el material, ¿cuál es el tercer principio fundamental sobre arquitectura?
+a) La arquitectura es siempre la última fase del desarrollo
+*b) La "arquitectura" no es una fase del desarrollo
+c) La arquitectura solo se define al inicio del proyecto
+d) La arquitectura se define exclusivamente al finalizar el proyecto
+
+15. Según el material, ¿cómo se define la arquitectura en relación con las decisiones de diseño?
+a) Como el conjunto de decisiones menores de implementación técnica tomadas a diario
+b) Como el conjunto de decisiones tomadas únicamente por el cliente
+*c) Como el conjunto de decisiones principales de diseño de un sistema
+d) Como el conjunto de decisiones tomadas después de liberar el sistema
+
+16. Según Clements (1996), ¿cuáles son los temas fundamentales de la arquitectura de software?
+a) Elicitación, modelado, análisis y validación de requerimientos
+b) Componentes, conectores y propiedades del sistema
+c) Vistas lógica, de procesos, física y de despliegue del sistema
+*d) Diseño, representación, evaluación, desarrollo y recuperación de la arquitectura
+
+17. Según el material, ¿qué implica la "integridad conceptual" de una buena arquitectura?
+*a) Que sea producto de un arquitecto o un grupo pequeño con líder claro
+b) Que sea aprobada formalmente por todos los stakeholders del proyecto sin excepción
+c) Que sea documentada exclusivamente utilizando diagramas en formato UML estándar
+d) Que sea implementada siempre por un equipo grande y distribuido geográficamente
+
+18. Según el material, ¿qué debe tener claro el equipo de arquitectura para lograr una buena arquitectura?
+a) El cronograma detallado y el presupuesto total del proyecto
+*b) Los requerimientos funcionales y los atributos de calidad que sean claros
+c) El organigrama completo de la empresa que contrata el proyecto
+d) La lista de tecnologías que prefiere usar cada desarrollador
+
+19. Según el material, ¿qué dos condiciones adicionales debe cumplir una buena arquitectura respecto a su documentación?
+a) Debe estar documentada, pero no necesita ser revisada por nadie
+b) Debe ser revisada por gerencia, pero no necesita estar documentada
+*c) Debe estar documentada y debe ser revisada por los stakeholders
+d) Debe estar documentada solo si el cliente lo solicita expresamente
+
+20. Según el material, ¿qué otras características debe tener una buena arquitectura, además de estar documentada?
+a) Ser evaluada solo al finalizar el proyecto, sin permitir cambios
+b) Ser implementada de una sola vez, sin fases intermedias de desarrollo
+c) Ser revisada únicamente por el arquitecto principal del proyecto
+*d) Ser evaluada cuantitativamente y permitir una implementación incremental del sistema
+
+21. Según el material, ¿en qué se basan los módulos bien definidos de una buena arquitectura?
+*a) En el ocultamiento de la información, con interfaces claramente definidas
+b) En la cantidad de líneas de código de cada módulo
+c) En la opinión personal de cada desarrollador del equipo de trabajo
+d) En la cantidad de pruebas unitarias que posee cada módulo
+
+22. Según el material, ¿cómo se describe la representación de las arquitecturas de software?
+a) Como una representación de bajo nivel centrada en el código fuente
+*b) Como una representación de alto nivel de la estructura del sistema
+c) Como una representación exclusiva de la base de datos del sistema
+d) Como una representación centrada solo en la interfaz de usuario final del sistema
+
+23. Según el material, ¿qué tipo de aspectos trata la arquitectura que no pueden tratarse dentro de los módulos?
+a) Aspectos exclusivamente relacionados con el presupuesto del proyecto
+b) Aspectos exclusivamente relacionados con la interfaz gráfica de usuario final
+*c) Aspectos del diseño y desarrollo que exceden a los módulos individuales
+d) Aspectos exclusivamente relacionados con la documentación del usuario
+
+24. Según el material, ¿cuál es uno de los objetivos de las arquitecturas de software respecto a la comprensión del sistema?
+a) Ocultar la estructura de las aplicaciones para simplificar su uso
+b) Eliminar la necesidad de documentar las aplicaciones complejas
+c) Reemplazar el diseño detallado por diagramas automáticos
+*d) Comprender y mejorar la estructura de las aplicaciones complejas
+
+25. Según el material, ¿qué objetivo cumple la arquitectura respecto a la reutilización?
+*a) Reutilizar la estructura, o partes de ella, para resolver problemas similares
+b) Reutilizar el mismo código fuente en todos los proyectos futuros
+c) Reutilizar la documentación de proyectos anteriores sin modificarla bajo ninguna circunstancia particular
+d) Reutilizar las pruebas unitarias de otros sistemas ya liberados
+
+26. Según el material, ¿qué objetivo cumple la arquitectura respecto a la corrección de la aplicación?
+a) Analizar exclusivamente el rendimiento de la base de datos del sistema
+*b) Analizar la corrección de la aplicación y su cumplimiento de los requisitos
+c) Analizar exclusivamente el costo total estimado para el proyecto
+d) Analizar exclusivamente la satisfacción declarada por el cliente final
+
+27. Según el material, ¿qué objetivo cumple la arquitectura respecto a la evolución de la aplicación?
+a) Impedir cualquier cambio futuro sobre la aplicación ya liberada
+b) Eliminar las partes inmutables de la aplicación en cada versión del sistema
+*c) Planificar la evolución identificando partes mutables e inmutables y sus costos
+d) Delegar la evolución completa al equipo de testing del proyecto
+
+28. Según el material, ¿qué aspectos incluye la adaptación al cambio que facilita la arquitectura?
+a) Solo la reconfiguración y nada más del sistema
+b) Solo la escalabilidad y la mantenibilidad del sistema completo
+c) Solo la composición y la reutilización exclusivamente
+*d) Composición, reconfiguración, reutilización, escalabilidad y mantenibilidad del sistema
+
+29. Según el material, ¿de qué no se ocupa la arquitectura de software?
+*a) Del diseño detallado, de algoritmos y de estructuras de datos
+b) De la definición de los requerimientos funcionales del sistema completo y validado
+c) De la identificación de los atributos de calidad del sistema
+d) De la definición de las restricciones impuestas por el cliente
+
+30. Según Garlan y Shaw (1993), ¿cómo se define la arquitectura de software?
+a) Como un conjunto de pruebas y casos de uso del sistema completo
+*b) Como una colección de componentes junto con una descripción de sus interacciones
+c) Como un documento que detalla los requerimientos del cliente final
+d) Como un cronograma de tareas asignadas a todo el equipo
+
+31. Según Garlan y Shaw, ¿qué representan los "componentes" de una arquitectura de software?
+a) Los protocolos de comunicación entre los distintos módulos del sistema
+b) Las restricciones no negociables impuestas por el cliente
+*c) Los lugares de almacenamiento o cómputo, como filtros o bases de datos
+d) Los diagramas que documentan la arquitectura del sistema
+
+32. Según Garlan y Shaw, ¿qué representan los "conectores" de una arquitectura de software?
+a) Los lugares de almacenamiento de datos del sistema
+b) Las propiedades utilizadas para la construcción y el análisis del sistema
+c) Los atributos de calidad requeridos por los stakeholders
+*d) Los mediadores entre componentes, como llamadas a procedimientos o pipes
+
+33. Según Garlan y Shaw, ¿qué representan las "propiedades" de una arquitectura de software?
+*a) La información para construcción, como pre y post condiciones del sistema
+b) Los lugares de almacenamiento o cómputo utilizados por el sistema completo y actual
+c) Los mediadores entre los distintos componentes del sistema completo
+d) Los protocolos de sincronización utilizados por todo el sistema
+
+34. Según el material, ¿qué representan las vistas arquitectónicas?
+a) La totalidad de la arquitectura de software en un único diagrama del sistema
+*b) Un aspecto parcial de la arquitectura que muestra propiedades específicas del sistema
+c) El código fuente completo del sistema en un solo archivo
+d) El cronograma completo de todas las entregas del proyecto
+
+35. Según el material, ¿por qué existen múltiples vistas arquitectónicas en lugar de una sola?
+a) Porque cada vista corresponde a un cliente distinto del proyecto
+b) Porque cada vista se genera automáticamente por una herramienta
+*c) Porque una única representación resultaría demasiado compleja de entender
+d) Porque cada vista debe ser aprobada por un comité distinto
+
+36. Según el material, ¿de qué depende la relevancia de una vista arquitectónica?
+a) Depende únicamente de la antigüedad del sistema
+b) Depende únicamente del tamaño del equipo de desarrollo asignado al proyecto
+c) Depende únicamente del presupuesto asignado al proyecto
+*d) Depende del propósito, como el análisis de atributos de calidad
+
+37. Según el material, ¿qué atributo de calidad suele exponer especialmente la vista modular?
+*a) La portabilidad
+b) La confiabilidad
+c) La performance
+d) La disponibilidad
+
+38. Según el material, ¿qué atributos de calidad suele exponer especialmente la vista de deployment?
+a) Usabilidad y accesibilidad
+*b) Performance y confiabilidad
+c) Portabilidad y modificabilidad
+d) Seguridad y auditabilidad
+
+39. Según el material, ¿es correcto afirmar que una vista arquitectónica es "LA" arquitectura del sistema?
+a) Sí, la vista lógica siempre representa la arquitectura completa
+b) Sí, cualquier vista puede considerarse la arquitectura completa
+*c) No, ninguna vista es "LA" arquitectura del sistema
+d) Sí, pero solo si el sistema es suficientemente pequeño
+
+40. Según las estructuras propuestas por David Parnas (1974), ¿cuáles se mencionan como base de las vistas?
+a) Estructura lógica, estructura física y estructura de despliegue
+b) Estructura de datos, estructura de control y estructura de red del sistema
+c) Estructura de clases, estructura de objetos y estructura de paquetes
+*d) Estructura de módulos, estructura de uso y estructura de procesos
+
+41. En la Vista 4+1 de Kruchten (1995), ¿a qué stakeholder corresponde la Vista Lógica?
+*a) Al usuario final, centrada en la funcionalidad del sistema
+b) A los programadores, centrada en la gestión del software
+c) A los integradores, centrada en el rendimiento y la escalabilidad
+d) A los ingenieros de sistemas, centrada en la topología del sistema
+
+42. En la Vista 4+1 de Kruchten, ¿a qué stakeholder corresponde la Vista de Despliegue?
+a) Al usuario final, centrada en la funcionalidad del sistema
+*b) A los programadores, centrada en la gestión del software
+c) A los integradores, centrada en el rendimiento y la escalabilidad
+d) A los ingenieros de sistemas, centrada en la topología del sistema
+
+43. En la Vista 4+1 de Kruchten, ¿qué representa la "+1" del modelo?
+a) La vista de despliegue, centrada en la gestión del software
+b) La vista física, centrada en la topología del sistema
+*c) La vista de escenarios, representada mediante el diagrama de casos de uso
+d) La vista de procesos, centrada en el rendimiento y la escalabilidad del sistema
 `;
