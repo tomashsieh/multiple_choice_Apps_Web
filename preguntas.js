@@ -67,207 +67,111 @@ const MATERIA_ID_AAW = "arquitectura-apps-web";
 const MATERIA_NOMBRE_AAW = "Arquitectura de Aplicaciones Web";
 
 const PREGUNTAS_RAW_AAW = `
-## Nivel 1: Reseña Histórica y Requerimientos de Software
+## Nivel 1: Ingeniería de Requerimientos de Software
 
-1. ¿Qué aporte se atribuye a Dijkstra en 1968?
-*a) Introdujo la noción de "niveles de abstracción" y sistemas organizados en capas
-b) Introdujo el modelo de arquitectura en capas para bases de datos relacionales
-c) Introdujo el concepto de patrones de diseño reutilizables orientados a objetos
-d) Introdujo el modelo de ciclo de vida en cascada para el desarrollo de software
-
-2. Según Sharp en la conferencia NATO de 1969, ¿por qué el sistema operativo OS/360 resultó un "amontonamiento amorfo de programas"?
-a) Porque los programadores no siguieron las buenas prácticas de codificación acordadas
-b) Porque no se contaba con herramientas de programación adecuadas para el proyecto
-*c) Porque su diseño fue delegado a distintos grupos, cada uno con arquitectura propia
-d) Porque no se realizaron pruebas de integración adecuadas entre los distintos módulos del sistema
-
-3. Según Sharp (1969), ¿qué crítica hacía a las especificaciones de software de la época?
-a) Que exigían demasiado detalle sobre el diseño y la forma general del sistema
-b) Que estaban escritas exclusivamente por arquitectos sin participación de los programadores
-c) Que no distinguían entre los requerimientos de negocio y los de usuario
-*d) Que se consideraban especificaciones funcionales sobre lo que debía hacer el programa
-
-4. Según Brooks (1975), ¿cómo definía el concepto de arquitectura del sistema?
-a) El conjunto de patrones de diseño reutilizables de un sistema
-*b) La especificación completa y detallada de la interfaz de usuario
-c) El diagrama de componentes y conexiones de un sistema
-d) El conjunto de restricciones no negociables impuestas por el cliente en este proyecto
-
-5. Para Brooks, ¿qué distinción establecía entre arquitectura e implementación?
-a) La arquitectura se ocupa del cómo y la implementación del qué
-b) La arquitectura es responsabilidad del cliente y la implementación del arquitecto
-*c) La arquitectura dice qué hacer y la implementación se ocupa de cómo hacerlo
-d) La arquitectura surge después del código y la implementación la precede
-
-6. ¿Qué diferencia señala el material entre el enfoque de Dijkstra y el de Brooks respecto a la arquitectura?
-*a) Dijkstra se basaba en el formalismo matemático y Brooks en las variables humanas
-b) Dijkstra consideraba las variables humanas y Brooks el formalismo matemático del diseño de los sistemas
-c) Ambos autores se basaban exclusivamente en el formalismo matemático de la disciplina
-d) Ambos autores consideraban únicamente las variables humanas del desarrollo de software
-
-7. ¿Cuáles son los temas que David Parnas desarrolló en la década del 70?
-a) Modelo espiral, prototipado y desarrollo iterativo incremental de software
-b) Programación orientada a objetos, herencia, polimorfismo y encapsulamiento de datos
-c) Vistas arquitectónicas, viewtypes y lenguajes de descripción de arquitectura formal y de diseño
-*d) Descomposición de sistemas, ocultamiento de información y familias de programas
-
-8. Según Parnas, ¿qué constituyen las "decisiones tempranas" del desarrollo?
-a) Los requerimientos no funcionales del sistema
-*b) Lo que hoy se llamarían decisiones arquitectónicas
-c) Los casos de test de aceptación del sistema
-d) Las restricciones impuestas por la gerencia ejecutiva
-
-9. Según la definición de Parnas, ¿qué es una familia de programas?
-a) Un conjunto de programas escritos en el mismo lenguaje de programación
-b) Un conjunto de programas desarrollados por el mismo equipo de trabajo
-*c) Un conjunto de programas útil de considerar como grupo, sin compartir necesariamente dominio
-d) Un conjunto de programas que comparten la misma arquitectura en capas del mismo sistema
-
-10. ¿Qué reivindicaba Mary Shaw en 1984?
-*a) Las abstracciones de alto nivel dentro del proceso de desarrollo de software
-b) La necesidad de contar con estándares únicos de codificación para todo proyecto
-c) El uso exclusivo de la programación estructurada en el desarrollo de sistemas
-d) La eliminación de la metáfora arquitectónica dentro de la ingeniería de software
-
-11. ¿Qué aportaron Perry y Wolf en 1992?
-a) El primer lenguaje de descripción de arquitectura formalizado para la industria del software
-b) La recomendación IEEE Std 1471 sobre la descripción arquitectónica de sistemas
-c) El modelo REST orientado a servicios y recursos para sistemas web
-*d) El primer estudio que usa "arquitectura de software" en el sentido actual
-
-12. En el modelo de Perry y Wolf, ¿qué representa el componente "forma"?
-a) Los elementos de procesamiento, datos o conexión que forman el sistema
-*b) Las relaciones y restricciones entre los elementos que componen el sistema
-c) La base subyacente que deriva de los requerimientos propios del sistema
-d) El conjunto de patrones aplicados durante la implementación del sistema
-
-13. ¿Qué surgimiento marcó el año 1995 en la reseña histórica de la arquitectura de software?
-a) La programación basada en componentes reutilizables dentro del desarrollo de software
-b) El modelo REST propuesto por Roy Fielding para servicios orientados a recursos en Internet
-*c) Los patrones, cristalizados en textos como el de Gamma, Helm, Johnson y Vlissides
-d) La recomendación IEEE Std 1471 sobre la descripción arquitectónica de sistemas
-
-14. Según Paul Clements (1996), ¿hacia qué modelo debía evolucionar la arquitectura de software?
-*a) Hacia la integración de componentes pre-programados más que hacia la programación
-b) Hacia la programación estructurada tradicional basada en módulos y procedimientos de software
-c) Hacia la especificación exclusivamente formal y matemática de los sistemas
-d) Hacia el uso exclusivo de lenguajes de descripción de arquitectura
-
-15. ¿Qué estableció Roy Fielding en el año 2000?
-a) La recomendación IEEE Std 1471 para la descripción arquitectónica de sistemas
-b) El modelo de las cinco vistas arquitectónicas conocido habitualmente como el modelo 4+1 de Kruchten
-c) El paradigma de programación basada en la integración de componentes reutilizables
-*d) El modelo REST, vinculado a las tecnologías de Internet y los servicios web
-
-16. ¿Qué buscaba homogenizar la versión definitiva de la recomendación IEEE Std 1471-2000?
-a) Los lenguajes de programación orientados a objetos más difundidos en la industria
-*b) La nomenclatura de descripción arquitectónica y los estilos como modelo conceptual
-c) Las metodologías ágiles utilizadas habitualmente para el desarrollo de software
-d) Los protocolos de comunicación empleados entre sistemas distribuidos en red
-
-17. Según el material, ¿de qué se ocupa la Ingeniería de Software?
+1. Según el material, ¿de qué se ocupa la Ingeniería de Software?
 a) De construir un producto de software siguiendo exclusivamente los requerimientos del cliente
 b) De documentar de forma exhaustiva todos los procesos de negocio de una organización
 *c) De construir software de alta calidad dentro de restricciones de tiempo y presupuesto
 d) De diseñar interfaces de usuario accesibles para distintos tipos de dispositivos modernos y variados
 
-18. ¿Cómo se define la calidad del software en relación con su propósito?
+2. ¿Cómo se define la calidad del software en relación con su propósito?
 *a) Como el grado en que el software cumple su propósito
 b) Como el grado de cumplimiento de los estándares de codificación
 c) Como la cantidad de pruebas unitarias superadas antes de la entrega
 d) Como el nivel de satisfacción medido solo durante el mantenimiento
 
-19. Según la visión sistémica presentada, ¿en qué está siempre embebido el software?
+3. Según la visión sistémica presentada, ¿en qué está siempre embebido el software?
 a) Únicamente en el hardware sobre el que se ejecuta en producción
 b) Únicamente en las organizaciones que lo utilizan
 c) Únicamente en los estándares de la industria vigentes
 *d) En hardware, en actividad humana y en un mundo físico
 
-20. En el ejemplo del sistema de remate por Internet, ¿qué se identifica como "software" a construir?
-a) Los compradores, vendedores y las empresas transportistas que participan del sistema
+4. En el ejemplo del sistema de remate por Internet, ¿qué se identifica como "software" a construir?
+a) Los compradores, vendedores y las empresas transportistas del sistema
 *b) El componente para insertar ítems, manejar ofertas y facturar al ganador
 c) La relación de confianza que se genera entre compradores y vendedores
-d) El subsistema de pago electrónico externo, ya construido por otra empresa
+d) El subsistema de pago electrónico externo, ya construido por otra empresa del proyecto
 
-21. Según la definición del material, la Ingeniería de Requisitos actúa como:
+5. Según la definición del material, la Ingeniería de Requisitos actúa como:
 a) Una fase inicial y aislada dentro del ciclo de vida del software
 b) Un conjunto de pruebas de aceptación posteriores a la implementación final del sistema completo
 *c) Un puente entre las necesidades reales de los interesados y las tecnologías disponibles
 d) Un documento contractual firmado únicamente por el cliente del proyecto
 
-22. Según el gráfico de costo relativo de corrección de errores (Boehm), ¿en qué etapa resulta más costoso corregir un error?
+6. Según el gráfico de costo relativo de corrección de errores (Boehm), ¿en qué etapa resulta más costoso corregir un error?
 *a) En la etapa de mantenimiento
 b) En la etapa de requerimientos
 c) En la etapa de test de unidad
 d) En la etapa de diseño
 
-23. Según los datos del Standish Group para 1998, ¿cuál era la categoría de mayor porcentaje entre los proyectos relevados?
+7. Según los datos del Standish Group para 1998, ¿cuál era la categoría de mayor porcentaje entre los proyectos relevados?
 a) Proyectos exitosos
 b) Proyectos cancelados
 c) Proyectos sin clasificar
 *d) Proyectos con problemas
 
-24. Según el Standish Group, ¿cuál figuraba entre las tres causas principales percibidas de éxito de un proyecto?
+8. Según el Standish Group, ¿cuál figuraba entre las tres causas principales percibidas de éxito de un proyecto?
 a) Tecnología nueva
 *b) Involucramiento de usuarios
 c) Incompetencia técnica
 d) Objetivos poco claros
 
-25. Según el Standish Group, ¿cuál figuraba entre las tres causas principales percibidas de cancelación de un proyecto?
+9. Según el Standish Group, ¿cuál figuraba entre las tres causas principales percibidas de cancelación de un proyecto?
 a) Entregas (milestones) más pequeñas
 b) Personal competente
 *c) Requerimientos incompletos
 d) Visión y objetivos claros
 
-26. Según el relevamiento del European Software Institute citado en el material, ¿cuáles fueron señalados como los problemas mayores en el desarrollo de software?
+10. Según el relevamiento del European Software Institute citado en el material, ¿cuáles fueron señalados como los problemas mayores en el desarrollo de software?
 *a) La especificación de requerimientos y la gestión de requerimientos
 b) La falta de personal capacitado y el uso de tecnología obsoleta
 c) La falta de presupuesto y la falta de apoyo gerencial
 d) El diseño detallado y la integración de componentes
 
-27. ¿Cuál de las siguientes se menciona como una fuente de complejidad esencial en la Ingeniería de Requerimientos?
+11. ¿Cuál de las siguientes se menciona como una fuente de complejidad esencial en la Ingeniería de Requerimientos?
 a) La existencia de un único sistema a construir sin propuestas alternativas
 b) La disponibilidad de una formulación definitiva y cerrada del problema en todo momento
 c) La posibilidad de dar siempre una respuesta binaria sobre la solución
 *d) La coexistencia de múltiples partes interesadas con intereses contrapuestos entre sí
 
-28. Según el material, ¿qué busca incrementar el proceso de validación?
+12. Según el material, ¿qué busca incrementar el proceso de validación?
 a) La corrección de una descripción formal respecto de otra descripción
 *b) La confianza en que una descripción formal se corresponda con la realidad
 c) La cantidad de casos de test generados a partir de los requerimientos
 d) La velocidad de desarrollo alcanzada por el equipo de trabajo
 
-29. ¿Cuál de las siguientes NO forma parte de las actividades de desarrollo de requerimientos listadas en el material?
+13. ¿Cuál de las siguientes NO forma parte de las actividades de desarrollo de requerimientos listadas en el material?
 a) Elicitación de requerimientos junto a los interesados del proyecto en reuniones iniciales
 b) Negociación de prioridades entre los distintos interesados del sistema
 *c) Despliegue en producción del sistema una vez finalizado su desarrollo
 d) Especificación completa y detallada de los requerimientos acordados
 
-30. En el modelo de ciclo de vida en cascada (Royce, 1970), ¿qué etapa se ubica inmediatamente antes del diseño?
-*a) Requerimientos
-b) Implementación
-c) Integración
-d) Validación
+14. En el modelo de ciclo de vida en cascada (Royce, 1970), ¿qué etapa se ubica inmediatamente antes del diseño?
+*a) La etapa de Requerimientos iniciales
+b) La etapa de Implementación
+c) La etapa de Integración de componentes
+d) La etapa de Validación final del sistema
 
-31. ¿Qué representa el eje horizontal del Modelo V presentado en el material?
+15. ¿Qué representa el eje horizontal del Modelo V presentado en el material?
 a) El nivel de abstracción con que se describen las actividades del proyecto
 b) El grado de dependencia que existe con la implementación final
 c) La completitud alcanzada por los requerimientos ya documentados y validados
 *d) El tiempo, desde el análisis hacia el testeo e integración
 
-32. ¿Qué contrapone el Modelo Twin Peaks al definir el desarrollo?
+16. ¿Qué contrapone el Modelo Twin Peaks al definir el desarrollo?
 a) La gestión de requerimientos frente a la gestión de configuración
 *b) La definición del problema y la definición de la solución en paralelo
 c) El desarrollo de requerimientos frente a las pruebas de aceptación
 d) Los modelos de objetivos frente a los modelos arquitectónicos
 
-33. Según los tres niveles de requerimientos de software presentados, ¿cuáles son?
+17. Según los tres niveles de requerimientos de software presentados, ¿cuáles son?
 a) Requerimientos de arquitectura, de diseño y de implementación
 b) Requerimientos de hardware, de software y de red
 *c) Requerimientos de negocio, de usuario y funcionales/no funcionales
 d) Requerimientos de elicitación, de análisis y de especificación
 
-34. Dentro de los requerimientos no funcionales, ¿cómo se caracterizan las restricciones?
+18. Dentro de los requerimientos no funcionales, ¿cómo se caracterizan las restricciones?
 *a) Como características no negociables que impone el cliente al sistema
 b) Como propiedades que afectan la satisfacción pero pueden negociarse libremente
 c) Como atributos de calidad medibles solo mediante pruebas de rendimiento
@@ -786,4 +690,390 @@ a) La vista de despliegue, centrada en la gestión del software
 b) La vista física, centrada en la topología del sistema
 *c) La vista de escenarios, representada mediante el diagrama de casos de uso
 d) La vista de procesos, centrada en el rendimiento y la escalabilidad del sistema
+
+## Nivel 4: Viewtypes y Estilos Arquitectónicos
+
+1. ¿En qué se enfoca principalmente el diseño "In the Small"?
+*a) En algoritmos, estructuras de datos e interfaces de módulos individuales
+b) En la comunicación entre los componentes principales del sistema
+c) En la selección de tecnologías, patrones y herramientas para el desarrollo
+d) En la planificación del crecimiento futuro del sistema completo
+
+2. ¿Qué enfoque caracteriza al diseño "In the Large"?
+a) Los detalles de implementación específicos a nivel del código fuente del sistema
+*b) La estructura general del sistema y la comunicación entre sus componentes
+c) La organización óptima de las estructuras de datos internas
+d) La eficiencia de los algoritmos utilizados por cada módulo
+
+3. Según la comparación entre ambos enfoques de diseño, ¿cómo se caracteriza cada uno?
+a) In the Small es estratégico; In the Large es táctico
+b) Ambos enfoques del diseño son estratégicos y no tienen ningún componente táctico
+*c) In the Small es táctico; In the Large es estratégico
+d) Ambos enfoques del diseño son tácticos y no tienen ningún componente estratégico
+
+4. ¿Qué son los "Viewtypes" según el material?
+a) Los diagramas de casos de uso que documentan los requerimientos del sistema
+b) Los patrones de diseño que se aplican a nivel de código fuente
+c) Las plataformas de mensajería utilizadas para la comunicación entre distintos sistemas externos del proyecto
+*d) Las vistas de arquitectura orientadas a estructuras de módulos, C&C y alocación
+
+5. Según el material, ¿qué es un módulo dentro del Module Viewtype?
+*a) Una unidad de código que implementa un conjunto de responsabilidades
+b) Una entidad con manifestación runtime que consume recursos de ejecución
+c) Un mecanismo de comunicación utilizado entre distintos componentes independientes del sistema
+d) Una estructura de datos central compartida por varios componentes
+
+6. En el Module Viewtype, ¿qué relación describe el diagrama de Descomposición?
+a) La relación de herencia entre las clases del sistema
+*b) La relación "es un submódulo de" entre los módulos
+c) La relación de comunicación entre procesos en tiempo de ejecución
+d) La relación entre elementos de software y su entorno de despliegue
+
+7. Según el material, ¿cuándo se dice que un módulo A "usa a" un módulo B?
+a) Cuando A invoca directamente una función definida dentro de B
+b) Cuando B hereda directamente todas las responsabilidades y atributos definidos en A
+*c) Cuando la correcta ejecución de B resulta necesaria para la ejecución de A
+d) Cuando A y B pertenecen exactamente al mismo paquete de código fuente del sistema
+
+8. En el Module Viewtype, ¿a qué corresponde el diagrama de Clases?
+a) A módulos que representan estructuras de datos persistentes del sistema completo
+b) A módulos vinculados por relaciones de despliegue en distintos entornos
+c) A módulos organizados exclusivamente según su visibilidad de interfaces
+*d) A módulos que son clases, relacionadas entre sí mediante herencia
+
+9. Según el material, ¿para qué sirve el Module Viewtype en el ámbito del análisis?
+*a) Para la trazabilidad de requerimientos y el análisis de impacto
+b) Para asignar la responsabilidad del desarrollo a distintos equipos
+c) Para mapear el software a estructuras de archivos en repositorios
+d) Para mostrar cómo el software se asigna a hardware y comunicación
+
+10. ¿En qué están centradas las estructuras del C&C Viewtype?
+a) En los módulos de código fuente y sus relaciones de dependencia
+*b) En los procesos que se comunican entre sí
+c) En la estructura de archivos de los repositorios de control de versiones
+d) En la asignación de trabajo entre distintos equipos de programadores
+
+11. Según el material, ¿cómo se conforma la configuración del sistema en el C&C Viewtype?
+a) Como una jerarquía de módulos organizados por capas
+b) Como una tabla de asignación de trabajo entre distintos equipos de desarrollo
+*c) Como un grafo conformado por la asociación entre componentes y conectores
+d) Como una secuencia lineal de pasos ejecutados hasta completarse
+
+12. Según el material, ¿cómo se relacionan e interactúan los componentes en el C&C Viewtype?
+a) Se relacionan directamente entre sí, sin necesidad de conectores
+b) Se relacionan únicamente mediante relaciones de herencia entre las clases del sistema
+c) Se relacionan a través de una estructura de datos compartida central
+*d) Son entidades independientes que solo se relacionan a través de conectores
+
+13. En el C&C Viewtype, ¿qué indica la relación de "attachment"?
+*a) Qué componentes están vinculados con qué conectores
+b) Qué módulos son submódulos de otros módulos del sistema
+c) A qué hardware se asigna cada elemento de software
+d) Qué equipo de programadores es responsable de cada componente
+
+14. Dentro del Allocation Viewtype, ¿qué muestra la estructura de Deployment?
+a) Cómo se mapean los elementos de software a estructuras de archivos
+*b) Cómo el software se asigna a hardware y elementos de comunicación
+c) Cómo se asigna la responsabilidad del desarrollo a equipos de programadores
+d) Cómo se relacionan los componentes con los conectores dentro del sistema completo
+
+15. Dentro del Allocation Viewtype, ¿qué muestra la estructura de Implementación?
+a) Cómo el software se asigna a hardware y elementos de comunicación
+b) Cómo se comunican los componentes entre sí a través de sus distintos conectores del sistema
+*c) Cómo los elementos de software se mapean a estructuras de archivos en repositorios
+d) Cómo se organiza el código fuente según su visibilidad de interfaces
+
+16. Dentro del Allocation Viewtype, ¿a qué se refiere la "asignación de trabajo" (work assignment)?
+a) A la asociación entre componentes y sus puertos de conexión
+b) A la relación de herencia entre las clases del sistema
+c) A la correspondencia directa entre el software y el hardware de ejecución
+*d) A la responsabilidad del desarrollo y la implementación asignada a equipos
+
+17. Según el cuadro de estilos de viewtypes, ¿cuáles corresponden al Module?
+*a) Descomposición, Usos, Generalización y Capas (Layers)
+b) Pipe & Filter, Publish & Subscribe y Client-Server
+c) Deployment, Implementation y Work Assignment
+d) Blackboard, Shared-data y Point to point messaging
+
+18. Según el cuadro de estilos de viewtypes, ¿cuáles corresponden al C&C?
+a) Los estilos de Descomposición, Usos y Generalización del módulo
+*b) Pipe & Filter, Publish & Subscribe, Shared Data y Client-Server
+c) Deployment, Implementation y Work Assignment del entorno de alocación
+d) Batch sequential, Pipeline y UNIX Pipe & Filter del estilo Data-Flow
+
+19. ¿Qué determina un estilo arquitectónico según el material?
+a) Los requerimientos funcionales que debe cumplir el sistema completo
+b) El cronograma de desarrollo, las entregas y el presupuesto total asignado al proyecto
+*c) El vocabulario de componentes y conectores y las restricciones de cómo combinarlos
+d) Los atributos de calidad exigidos por los stakeholders del sistema
+
+20. Según las propiedades de un estilo arquitectónico, ¿qué aporta el "vocabulario para los elementos de diseño"?
+a) Las restricciones topológicas sobre cómo se combinan los elementos
+b) Los criterios utilizados para evaluar cuantitativamente una arquitectura de software ya construida
+c) La asignación de responsabilidades a los equipos de desarrollo
+*d) Los tipos de componentes y conectores utilizables, como clases o pipes
+
+21. Según el material, ¿qué ejemplo se da de una regla de composición de un estilo?
+*a) Que los elementos de un layer se comuniquen solo con el layer inferior
+b) Que los componentes solo puedan comunicarse mediante llamadas a procedimiento
+c) Que todo componente deba tener asociado siempre un módulo propio de memoria persistente exclusiva
+d) Que los conectores solo puedan transferir datos de forma síncrona
+
+22. Según el material, ¿qué es importante tener en cuenta sobre un estilo arquitectónico?
+a) Que siempre determina de forma concreta la funcionalidad completa del sistema construido
+*b) Que no define la funcionalidad de un sistema, es algo "abstracto"
+c) Que reemplaza la necesidad de definir componentes y conectores
+d) Que solo puede aplicarse a sistemas pequeños o medianos
+
+23. ¿De qué resultan las arquitecturas heterogéneas según el material?
+a) De la combinación de distintos entornos de despliegue físico
+b) De la combinación de distintos equipos de desarrollo
+*c) De la combinación de distintos estilos arquitectónicos
+d) De la combinación de distintas bases de datos compartidas
+
+24. Según el material, ¿qué estilos probablemente combine una arquitectura heterogénea hecha con JEE?
+a) Batch sequential, Pipeline y UNIX Pipe & Filter
+b) Blackboard, Shared-data y Point to point messaging
+c) Deployment, Implementation y Work Assignment
+*d) Layered, Repository, Independent components e Information hiding
+
+25. Según el material, ¿cuál es la diferencia entre módulos y componentes?
+*a) Los módulos son entidades de diseño, mientras que los componentes tienen entidad en ejecución
+b) Los módulos tienen entidad en tiempo de ejecución, mientras que los componentes son entidades de diseño
+c) Los módulos y los componentes son sinónimos dentro de una arquitectura de software
+d) Los módulos definen conectores, mientras que los componentes definen los atributos de calidad
+
+26. Según el material, ¿cómo se describe una arquitectura en términos de Componentes y Conectores?
+a) Como un conjunto de módulos organizados exclusivamente por capas
+*b) Como una colección de módulos de software interactuando mediante conectores
+c) Como una secuencia de pasos que se ejecutan uno a uno hasta completarse
+d) Como un documento que detalla los requerimientos del sistema
+
+27. Según los tipos de componentes presentados, ¿qué caracteriza a un componente "Computacional"?
+a) Mantiene una colección de datos persistentes, como una base de datos
+b) Contiene estado y operaciones asociadas mantenidas entre invocaciones sucesivas
+*c) Realiza el procesamiento en algún orden, como una función matemática
+d) Gobierna la secuencia de tiempo de otros eventos dentro del sistema
+
+28. ¿Qué caracteriza a un componente de tipo "Memoria"?
+a) Realiza el procesamiento de los datos en algún orden determinado
+b) Contiene un estado y un conjunto de operaciones asociadas entre invocaciones sucesivas del componente
+c) Gobierna la secuencia de tiempo de otros eventos del sistema
+*d) Mantiene una colección de datos persistentes, como bases de datos o archivos
+
+29. ¿Qué caracteriza a un componente de tipo "Manejador"?
+*a) Contiene estado y operaciones asociadas, mantenido entre invocaciones
+b) Realiza el procesamiento de datos, como una función matemática
+c) Mantiene una colección de datos persistentes del sistema
+d) Gobierna la secuencia de tiempo de otros eventos, como un scheduler
+
+30. ¿Qué caracteriza a un componente de tipo "Controlador"?
+a) Mantiene una colección de datos persistentes, como tablas de símbolos
+*b) Gobierna la secuencia de tiempo de otros eventos, como un scheduler
+c) Contiene un estado interno y operaciones asociadas entre distintas invocaciones sucesivas del componente
+d) Realiza el procesamiento en algún orden, como un filtro
+
+31. Entre los tipos de conectores, ¿qué caracteriza al "Procedure call"?
+a) La interacción de procesos a través de flujos de datos, como pipes
+b) Que el proceso se inicia recién cuando ocurre un evento determinado
+*c) Un simple thread de control entre el invocado y el invocador, como RPC
+d) El acceso concurrente a datos, utilizando un esquema definido de bloqueo entre distintos procesos
+
+32. ¿Qué caracteriza al conector de tipo "Data flow"?
+a) Un simple thread de control entre invocado e invocador
+b) La transferencia explícita de datos discretos entre distintos componentes del sistema, como TCP/IP
+c) El acceso concurrente a datos, como una pizarra compartida
+*d) La interacción de procesos a través de flujos de datos, como pipes
+
+33. ¿Qué caracteriza al conector de tipo "Implicit invocation"?
+*a) Que el proceso se inicia recién cuando ocurre un evento, como listas de correo
+b) La transferencia explícita de datos discretos entre distintos componentes del sistema
+c) Un thread de control simple entre el componente invocado y el invocador del sistema completo
+d) El acceso concurrente a datos con un esquema de bloqueo definido
+
+34. ¿Qué caracteriza al conector de tipo "Message passing"?
+a) El acceso concurrente a datos con algún esquema de bloqueo
+*b) La interacción mediante transferencia explícita de datos discretos, como TCP/IP
+c) Que el proceso se inicia recién cuando ocurre un evento
+d) La interacción de procesos a través de flujos de datos continuos
+
+35. ¿Qué caracteriza al conector de tipo "Shared data"?
+a) La interacción de procesos a través de flujos de datos continuos
+b) Un simple thread de control entre el invocado y el invocador
+*c) El acceso concurrente a datos, con un esquema de bloqueo, como una pizarra
+d) El inicio del proceso recién cuando ocurre un evento externo predefinido del sistema completo
+
+36. Según la taxonomía de estilos arquitectónicos, ¿qué subestilos se desprenden de "Data-Flow"?
+a) Publish-subscribe y Point to point messaging
+b) Client-Server y Peer to Peer
+c) Blackboard y Shared-data como estilos del Repository
+*d) Batch sequential y Pipe & Filter
+
+37. Según la taxonomía de estilos arquitectónicos, ¿qué subestilos se desprenden de "Call-Return"?
+*a) Client-Server y Peer to Peer
+b) Batch sequential y Pipeline
+c) Blackboard y Shared-data
+d) Publish-subscribe y Point to point messaging
+
+38. Según la taxonomía de estilos arquitectónicos, ¿qué subestilos se desprenden de "Event-Based"?
+a) Client-Server y Peer to Peer, del estilo Call-Return
+*b) Publish-subscribe y Point to point messaging
+c) Batch sequential y Pipe & Filter
+d) Blackboard y Shared-data del Repository
+
+39. Según la taxonomía de estilos arquitectónicos, ¿qué subestilos se desprenden de "Repository"?
+a) Client-Server y Peer to Peer
+b) Publish-subscribe y Point to point messaging
+*c) Blackboard y Shared-data
+d) Pipeline y UNIX Pipe & Filter
+
+40. Según el material, ¿en qué se basa la estructura del estilo Data Flow?
+a) En la asignación de trabajo a distintos equipos de desarrollo
+b) En el acceso concurrente a una estructura de datos central
+c) En la comunicación directa que se establece entre nodos autónomos e iguales del sistema
+*d) En transformaciones sucesivas a los datos de input, que fluyen hasta su destino
+
+41. ¿Qué caracteriza al estilo "Batch Sequential" dentro de Data Flow?
+*a) Cada paso se ejecuta hasta completarse, recién después comienza el siguiente
+b) Cada componente lee y produce streams de datos de forma continua
+c) Los componentes se suscriben a un canal para recibir mensajes
+d) Los datos se almacenan en una única estructura central compartida por todos
+
+42. ¿Qué caracteriza al estilo "Pipes & Filters" dentro de Data Flow?
+a) Cada paso debe completarse antes de que comience el siguiente
+*b) Los filtros ejecutan transformaciones y los pipes pasan streams entre ellos
+c) Los componentes se comunican exclusivamente mediante datos compartidos entre sí en todo momento
+d) Un componente de control asigna trabajo a los demás componentes
+
+43. Según el material, ¿cómo funciona el estilo "Call Return"?
+a) Los componentes se suscriben a un canal para recibir eventos del sistema
+b) Los datos fluyen de forma continua entre los distintos filtros del sistema
+*c) Un componente llama o invoca a otro y se queda esperando la respuesta
+d) Varios componentes acceden de forma concurrente a una misma estructura de datos compartida entre todos
+
+44. Según el material, ¿qué caracteriza al estilo Layered o Multi-tier?
+a) Cada nivel accede libremente a cualquier otro nivel del sistema
+b) Los niveles se comunican exclusivamente mediante una estructura de datos compartida entre todos
+c) Todos los niveles se ejecutan en un único proceso sin distinción
+*d) Cada nivel oculta al siguiente y provee servicios al nivel anterior
+
+45. Según el material, ¿cuál se menciona como una desventaja del estilo Layered?
+*a) La dificultad para encontrar la abstracción correcta y posibles pérdidas de performance
+b) La imposibilidad de reutilizar el código entre distintos niveles
+c) La imposibilidad de aplicar portabilidad entre distintas plataformas de hardware y de software
+d) La necesidad obligatoria de usar una base de datos compartida
+
+46. Según el material, ¿cuál es la diferencia entre "Layer" y "Tier"?
+a) Layer es una capa física y Tier es una capa lógica del sistema
+*b) Layer es una capa lógica, mientras que Tier es la capa física de ejecución
+c) Layer y Tier son sinónimos exactos dentro de toda la arquitectura del sistema
+d) Layer se aplica solo a los componentes, mientras que Tier se aplica a los conectores
+
+47. Según el material, ¿qué característica tiene el estilo Client/Server respecto al conocimiento entre sus partes?
+a) Los servidores conocen la identidad de todos sus clientes
+b) Ni los clientes ni los servidores conocen identidades entre sí
+*c) Los clientes conocen la identidad del servidor, pero no al revés
+d) Tanto clientes como servidores conocen la identidad de la otra parte del sistema
+
+48. ¿Cómo se describe el estilo Peer to Peer según el material?
+a) Un componente central controla la comunicación de todos los nodos
+b) Los nodos se organizan jerárquicamente en niveles o capas del sistema
+c) Los nodos comparten exclusivamente una única estructura de datos central compartida entre todos
+*d) Nodos autónomos e iguales se comunican entre sí a través de la red
+
+49. Según el material, ¿cómo se describe el flujo del estilo Event Based (EDA)?
+*a) Event Producer, Event Processor y luego Event Consumer
+b) Event Consumer, Event Processor y luego Event Producer
+c) Event Processor, Event Producer y luego Event Consumer
+d) Event Consumer y Event Producer, sin intervención de un procesador
+
+50. Según el material, ¿cómo funciona el estilo Publish & Subscribe?
+a) Un componente central asigna tareas específicas a los demás componentes
+*b) Los componentes se suscriben a un canal para recibir mensajes de otros
+c) Los componentes acceden concurrentemente a una base de datos central
+d) Un componente invoca a otro y espera su respuesta directa
+
+51. Según el material, ¿en qué se basa el estilo "Centradas en datos"?
+a) En la comunicación directa entre pares del sistema, sin intermediarios
+b) En transformaciones sucesivas aplicadas a los datos de entrada del sistema
+*c) En una estructura de datos central a la que acceden los componentes
+d) En la asignación jerárquica de responsabilidades entre los distintos módulos del sistema completo
+
+52. Según el material, ¿qué elementos incluye la documentación de una arquitectura?
+a) Solo el código fuente comentado y las pruebas unitarias
+b) Solo el cronograma de entregas y el presupuesto del proyecto
+c) Solo los diagramas de despliegue en el entorno de producción
+*d) Descripción de requerimientos, contexto, diagramas y restricciones de implementación
+
+53. En el modelo Pub/Sub, ¿qué función cumple el Message Broker?
+*a) Recibe los mensajes y los distribuye a los suscriptores adecuados
+b) Envía mensajes o eventos directamente a otros publicadores del sistema completo
+c) Se suscribe a ciertos tipos de mensajes para recibirlos
+d) Almacena de forma permanente todos los mensajes publicados
+
+54. Según el material, ¿qué caracteriza a Apache Kafka?
+a) Un broker de mensajes basado en el protocolo AMQP
+*b) Un sistema de mensajería distribuida y streaming en tiempo real
+c) Un servicio de mensajería exclusivo de Google Cloud
+d) Una cola de mensajes utilizada junto con un servicio de notificación
+
+55. Según el material, ¿qué caracteriza a RabbitMQ?
+a) Un sistema de streaming en tiempo real usado por Netflix
+b) Una alternativa a Kafka diseñada para alta escalabilidad
+*c) Un broker de mensajes basado en el protocolo AMQP
+d) Un servicio de mensajería de Google Cloud para eventos
+
+56. Según el material, ¿qué relación tienen SNS y SQS dentro de AWS?
+a) SNS es la cola de mensajes y SQS permite la publicación
+b) Ambos cumplen exactamente la misma función de mensajería dentro de todo AWS
+c) SNS y SQS son alternativas de Kafka usadas por Yahoo y Tencent en la nube
+*d) SNS permite la publicación de mensajes, y SQS es la cola de mensajes
+
+57. Según el material, ¿dónde se utiliza especialmente Google Cloud Pub/Sub?
+*a) En Google Analytics, Firebase y aplicaciones IoT
+b) En sistemas de mensajería usados por Slack e Instagram
+c) En plataformas de streaming usadas por LinkedIn y Uber
+d) En sistemas de cola de mensajes usados por Amazon y Airbnb
+
+58. Según el material, ¿qué caracteriza a Apache Pulsar?
+a) Un broker basado en el protocolo AMQP usado por MercadoLibre
+*b) Una alternativa a Kafka diseñada para alta escalabilidad
+c) Un servicio de mensajería exclusivo de Google Cloud
+d) Una cola de mensajes utilizada junto con un servicio de notificación
+
+59. Según el material, ¿qué contiene un archivo .torrent?
+a) El archivo completo que se va a compartir en la red
+b) La lista completa de peers conectados en ese momento
+*c) Información sobre los fragmentos del archivo y la ubicación del tracker
+d) El historial completo de descargas realizadas por cada peer del sistema entero
+
+60. Según el material, ¿qué función cumplen los Trackers en una red peer to peer?
+a) Almacenan una copia completa de los archivos compartidos
+b) Descargan los archivos en representación de los demás peers
+c) Reemplazan por completo la necesidad de contar con peers
+*d) Coordinan la comunicación entre pares, sin almacenar archivos
+
+61. Según el material, ¿cuál es la diferencia entre Seeders y Leechers?
+*a) Los Seeders tienen el archivo completo y los Leechers aún lo están descargando
+b) Los Seeders coordinan la red y los Leechers almacenan solamente los metadatos del archivo
+c) Los Seeders solo descargan y los Leechers solo comparten archivos completos
+d) Los Seeders son servidores centrales y los Leechers son trackers
+
+62. Según el material, ¿qué es el "Swarm" en una red peer to peer?
+a) El servidor central que coordina toda la red de peers
+*b) El conjunto de todos los peers, seeders y leechers, compartiendo un archivo
+c) El protocolo que permite compartir listas de peers sin usar nunca un tracker central
+d) El mecanismo alternativo a los trackers basado en tabla hash
+
+63. Según el material, ¿para qué sirve el mecanismo DHT (Distributed Hash Table)?
+a) Para almacenar una copia completa del archivo compartido en la red
+b) Para coordinar exclusivamente la comunicación entre los distintos seeders
+*c) Para que los peers se encuentren sin necesidad de un servidor centralizado
+d) Para transformar de forma sucesiva los datos de entrada de todo el sistema
+
+64. Según el material, ¿qué permite el protocolo PEX (Peer Exchange)?
+a) Almacenar una copia completa del archivo directamente en el tracker central del sistema
+b) Que un servidor central coordine la totalidad de la red
+c) Que los leechers se conviertan automáticamente en trackers del sistema completo
+*d) Que los clientes compartan listas de peers directamente, sin depender del tracker
 `;
