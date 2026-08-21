@@ -266,4 +266,192 @@ c) El incentivo tuvo efecto únicamente durante la primera semana
 b) reemplazar por completo los incentivos monetarios tradicionales usados antes
 c) reducir el tiempo total que la persona pasa haciendo ejercicio
 d) medir el nivel de autocontrol de cada participante antes de empezar
+
+## Nivel 2: Ciencias del Comportamiento y el Origen del Diseño
+
+1. ¿Qué representa el concepto de "Behavioral Design" según el material?
+*a) La intersección entre las ciencias del comportamiento y el design thinking
+b) Una técnica de investigación de mercado basada en encuestas
+c) Una rama exclusiva del diseño industrial centrada en la ergonomía
+d) Un método de programación específico para el diseño de interfaces de usuario
+
+2. Según la definición presentada en la clase, ¿qué implica el acto de diseñar?
+a) Copiar soluciones ya existentes sin modificar ningún elemento nuevo
+*b) Examinar una situación existente, imaginar una mejor y actuar para lograrla
+c) Imaginar posibilidades sin necesidad alguna de implementarlas nunca
+d) Registrar únicamente los problemas de un sistema sin proponer ningún cambio concreto
+
+3. El diagrama que vincula "mente" y "entornos" en el material ilustra que...
+a) la mente y los entornos funcionan de manera completamente independiente
+b) los entornos determinan la mente sin ningún tipo de retroalimentación
+*c) la mente genera entornos y esos entornos también transforman la mente
+d) la mente solo puede modificar entornos digitales, y nunca los entornos físicos
+
+4. ¿Cuál de las siguientes se menciona como parte de la revolución cognitiva?
+a) El desarrollo de la escritura cuneiforme en tablas de arcilla mesopotámicas antiguas
+b) La invención de la imprenta de tipos móviles en Alemania renacentista
+c) La domesticación de plantas y animales para el consumo alimenticio diario
+*d) La aparición de la ficción a través de mitos y leyendas
+
+5. ¿Qué ilustra el sitio de Göbekli Tepe, mencionado en el material?
+*a) La cooperación a gran escala entre personas hace unos 12000 años
+b) El origen de la escritura pictográfica en Mesopotamia
+c) El comienzo de la revolución industrial en Europa
+d) La primera aparición documentada de la agricultura sedentaria estable y bien organizada
+
+6. Según la línea temporal presentada, ¿qué hito se ubica alrededor del 10000 AC?
+a) La producción controlada del fuego por parte de los homínidos
+*b) El comienzo de la agricultura como forma de vida
+c) La invención del arco y la flecha para la caza
+d) La cooperación a gran escala en asentamientos religiosos
+
+7. ¿Dónde y con qué finalidad surgió el primer código de escritura según el material?
+a) En Egipto, para registrar diversas transacciones comerciales sobre papiro antiguo
+b) En China, para documentar decisiones políticas sobre tablillas de bambú
+*c) En el sur de Mesopotamia, para registrar información en tablas
+d) En Grecia, para transcribir extensos textos filosóficos sobre antiguos pergaminos originales
+
+8. ¿Qué necesidad impulsó el desarrollo de la imprenta de tipos móviles según el material?
+a) La necesidad de estandarizar las unidades de medida comerciales
+b) La necesidad de acelerar el transporte de mercancías por barco
+c) La necesidad de registrar el clima local con mayor precisión posible
+*d) La necesidad de difundir y replicar información a gran escala
+
+9. ¿Qué caracterizó a la revolución científica de los siglos XVI y XVII según el material?
+*a) La observación sistemática y la experimentación para poner a prueba ideas
+b) La producción en serie de bienes de consumo masivo
+c) La masificación del acceso a la información mediante internet
+d) La estandarización progresiva de la escritura sobre tablas de arcilla antiguas y duraderas
+
+10. ¿Qué permitió específicamente la máquina de vapor durante la revolución industrial?
+a) Acortar de manera notable los tiempos de comunicación entre continentes lejanos
+*b) Canalizar energía de forma continua a gran escala productiva
+c) Reemplazar por completo el trabajo intelectual y manual humano
+d) Digitalizar por completo los procesos de fabricación artesanal tradicional
+
+11. ¿Qué efecto tuvo la cámara Kodak de 1888 sobre el arte según el material?
+a) Obligó a los artistas a representar la realidad con mayor exactitud
+b) Eliminó casi por completo la pintura como forma de expresión artística tradicional
+*c) Liberó a los artistas de capturar la realidad, impulsando nuevas vanguardias
+d) Redujo notablemente el interés del público por el arte visual
+
+12. ¿Qué buscaba lograr la escuela de la Bauhaus fundada en 1919?
+a) Separar por completo el arte de toda la producción industrial moderna
+b) Promover el retorno a técnicas artesanales previas a la industria
+c) Desarrollar mobiliario destinado exclusivamente a la nobleza europea
+*d) Reconciliar diseño, tecnología e industria en un lenguaje formal reproducible
+
+13. Según el material, ¿qué cambio produjo el desarrollo de los antibióticos entre 1920 y 1940?
+*a) Un cambio en la expectativa de vida y en la capacidad médica
+b) La eliminación total de todas las enfermedades genéticas conocidas hasta ese momento preciso
+c) La creación de las primeras vacunas eficaces contra virus respiratorios
+d) El fin de la necesidad de higiene en los procedimientos médicos
+
+14. Según el material, ¿cuál es una característica que distingue el diseño humano del de otras especies?
+a) Sigue siempre un programa instintivo heredado genéticamente sin cambios
+*b) Se comunica a través de abstracciones como planos, diagramas o modelos
+c) Solo puede aplicarse a la construcción de refugios físicos
+d) Depende exclusivamente de la imitación de comportamientos previos ya observados con frecuencia
+
+15. ¿Qué idea transmite la frase "todo está diseñado, pero no todo está bien diseñado"?
+a) Que solo los objetos de uso cotidiano fueron diseñados intencionalmente
+b) Que el mal diseño ocurre únicamente en algunos contextos digitales actuales
+*c) Que los entornos son resultado de intervenciones humanas, no siempre efectivas
+d) Que la mayoría de los entornos actuales carece de intervención humana directa
+
+16. ¿Qué combinación describe el enfoque de las ciencias del comportamiento según el material?
+a) Intuición personal combinada con las opiniones de varios expertos reconocidos públicamente
+b) Normativa legal combinada con encuestas de opinión pública
+c) Tradición cultural combinada con reglas de convivencia social
+*d) Método científico y evidencia empírica para poner a prueba hipótesis
+
+17. ¿Cuál de las siguientes disciplinas se menciona como una de las que nutren a las ciencias del comportamiento?
+*a) La antropología
+b) La lingüística computacional
+c) La ingeniería civil
+d) La astronomía observacional
+
+18. ¿Qué diferencia plantea el material entre el Homo Economicus y el Homo Heuristicus?
+a) El primero toma decisiones grupales y el segundo decisiones individuales
+*b) El primero supone racionalidad plena y el segundo racionalidad limitada
+c) El primero es un concepto biológico y el segundo un concepto legal
+d) El primero prioriza el largo plazo y el segundo el corto plazo
+
+19. ¿Cómo se define la economía del comportamiento en el material?
+a) Como la rama de la economía que estudia únicamente los grandes mercados financieros internacionales
+b) Como una teoría que rechaza por completo los aportes de la economía clásica
+*c) Como la rama de la economía que incorpora psicología para entender las decisiones
+d) Como el estudio matemático de la oferta y la demanda sin variables humanas
+
+20. ¿Qué plantea el material respecto a la relación entre creencias, conocimientos y comportamiento?
+a) Que las creencias determinan siempre el comportamiento de manera directa
+b) Que el comportamiento humano depende únicamente de factores genéticos heredados y prácticamente fijos
+c) Que los conocimientos técnicos siempre garantizan decisiones plenamente racionales y correctas
+*d) Que las creencias, conocimientos y gustos no siempre coinciden con el comportamiento
+
+21. ¿Cuáles son las tres etapas que propone el material para trabajar con las ciencias del comportamiento?
+*a) Identificar, entender y acortar las brechas
+b) Diseñar, prototipar y testear soluciones concretas rápidamente
+c) Observar, medir y publicar resultados
+d) Planificar, ejecutar y evaluar acciones
+
+22. ¿Cuáles son los tres elementos del proceso de selección natural presentados en el material?
+a) Mutación, herencia y extinción total de las especies
+*b) Variación, competencia y selección de los individuos
+c) Adaptación, migración y aislamiento geográfico
+d) Reproducción, dispersión y especiación gradual
+
+23. Según el material, ¿en qué escala temporal opera la selección natural para consolidar adaptaciones complejas en humanos?
+a) En cuestión de meses dentro de una misma generación
+b) En ciclos de exactamente cien años por generación
+*c) En escalas de miles a millones de años
+d) En periodos que no superan una década completa
+
+24. ¿Por qué la preferencia adaptativa por alimentos dulces y grasos puede resultar perjudicial hoy en día?
+a) Porque esos alimentos ya no aportan ningún tipo de energía al cuerpo
+b) Porque el cuerpo humano dejó de digerir azúcares y grasas
+c) Porque esa preferencia desapareció por completo en la evolución reciente
+*d) Porque hoy esos alimentos abundan y el gasto energético es bajo
+
+25. Según el material, ¿en respuesta a qué ocurrieron los cambios evolutivos en el cerebro humano?
+*a) A problemas de supervivencia y reproducción de nuestros ancestros
+b) A necesidades exclusivamente estéticas de nuestros ancestros
+c) A la aparición temprana de la escritura y la imprenta
+d) A cambios climáticos ocurridos durante el último siglo
+
+26. ¿Qué plantea el material sobre el contexto en el que tomamos decisiones?
+a) Que las decisiones se toman siempre de manera aislada del entorno
+*b) Que tomamos decisiones en entornos complejos con estímulos que compiten
+c) Que el entorno no influye en absoluto en las decisiones humanas
+d) Que solo los entornos digitales afectan la toma de decisiones
+
+27. Según el material, ¿por qué no siempre realizamos análisis profundos antes de decidir?
+a) Porque los análisis profundos no aportan ningún beneficio a las decisiones
+b) Porque el cerebro humano carece de capacidad de razonamiento complejo
+*c) Porque los análisis detenidos y profundos requieren mucha energía cognitiva
+d) Porque las decisiones importantes se toman siempre de forma colectiva
+
+28. ¿Qué concepto ilustran el experimento y el libro "El gorila invisible" mencionados en el material?
+a) La memoria a largo plazo humana es prácticamente ilimitada casi siempre
+b) Las personas siempre notan cualquier cambio en su entorno visual
+c) La atención mejora notablemente bajo presión de tiempo
+*d) Nuestra atención es limitada y podemos no percibir estímulos evidentes
+
+29. ¿Qué buscaba lograr la imagen de una mosca grabada en los urinarios del aeropuerto de Schiphol?
+*a) Orientar la puntería de los usuarios para reducir la suciedad
+b) Decorar el espacio con un diseño artístico llamativo
+c) Medir el caudal de agua utilizado en cada urinario
+d) Advertir sobre un posible riesgo sanitario mediante una señal de alerta visible
+
+30. Según el material, además de físicos, ¿qué otro tipo de entornos pueden influir en nuestras decisiones?
+a) Únicamente entornos climáticos y geográficos
+*b) Entornos digitales, sociales, económicos, temporales y comunicacionales
+c) Solamente entornos relacionados con la temperatura ambiente exterior
+d) Exclusivamente entornos vinculados a la legislación vigente
+
+31. Según el material, ¿qué relación se plantea entre diseño, ciencias del comportamiento y behavioral design?
+a) Son tres disciplinas completamente independientes sin relación entre sí
+b) El behavioral design reemplaza por completo al diseño tradicional
+*c) El behavioral design mejora una situación modificando el contexto de las decisiones
+d) El behavioral design se limita únicamente al ámbito de la publicidad comercial actual
 `;
