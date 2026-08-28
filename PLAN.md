@@ -6,11 +6,12 @@
 
 ### Pendientes
 - **Habilitar GitHub Pages** — falta que el usuario confirme si el repo pasa a público (hoy es privado, y Pages gratis lo requiere) y que active Pages manualmente en Settings (branch `main`, carpeta raíz). No hay herramienta disponible en esta sesión para cambiar visibilidad del repo ni la config de Pages.
-- **Reemplazar el contenido de ejemplo** — `preguntas.js` tiene 3 niveles ficticios de "Arquitectura de Aplicaciones Web" solo para demostrar el formato; falta cargar las preguntas reales de la materia.
-- **Agregar materias reales adicionales** cuando el usuario curse otras asignaturas, siguiendo el patrón de 2 pasos documentado en el README.
+- **Agregar materias/niveles reales adicionales** a medida que el usuario curse nuevas clases, siguiendo el patrón ya documentado en el README.
 
 ### Completadas
 - 2026-08-19 — App de estudio multiple-choice multi-materia (Arquitectura de Aplicaciones Web)
+- 2026-08-28 — Cargar contenido real de "Arquitectura de Aplicaciones Web" (4 niveles) y crear la materia "Ciencia del Comportamiento Aplicada" (3 niveles)
+- 2026-08-28 — Checkpoints dentro de cada nivel
 
 ## Bitácora de decisiones
 
@@ -48,4 +49,10 @@
 **Contexto:** el usuario pidió mergear la branch de trabajo a `main` para poder habilitar GitHub Pages, pero el repo no tenía ningún commit ni branch `main` todavía.
 **Decisión:** se publicó el contenido de `claude/web-arch-quiz-app-4lxk3a` directamente como `main` (`git push origin claude/web-arch-quiz-app-4lxk3a:main`), equivalente a un merge sin conflictos por no existir historia previa en `main`.
 **Alternativas descartadas:** abrir un Pull Request contra `main` (no es posible crearlo si la rama base no existe todavía en GitHub).
+**Revisión post-implementación:** salió tal cual lo planeado.
+
+### 2026-08-28 — Checkpoints por nivel: 4 bloques fijos, reintento de checkpoint completo
+**Contexto:** con niveles largos (30-60+ preguntas ya cargadas en el contenido real), fallar una sola pregunta tarde obligaba a rehacer el nivel entero desde cero, lo cual el usuario consideró un castigo desproporcionado.
+**Decisión:** cada nivel se reparte en 4 checkpoints lo más parejos posible (ej. 33 → 9/8/8/8; <4 preguntas → un único checkpoint con todas). Al fallar una pregunta se reinicia únicamente ese checkpoint desde el principio, rebarajando tanto el orden de sus preguntas como las opciones de cada una. Como esto garantiza terminar el nivel con el 100% de aciertos, la pantalla de resultado quedó con un único desenlace ("aprobado") y se agregó un botón opcional "Jugar de nuevo".
+**Alternativas descartadas:** reintentar solo la pregunta puntual fallada, sin agrupar en bloques (el usuario pidió explícitamente bloques/checkpoints, no reintento pregunta por pregunta); checkpoints de tamaño variable u otra cantidad de bloques (se fijó en 4, confirmado explícitamente); mantener la rama "no aprobado / Reintentar nivel" del código aunque quedara inalcanzable (se descartó por ser código muerto, decisión explicada en el plan y confirmada al aprobarlo).
 **Revisión post-implementación:** salió tal cual lo planeado.
