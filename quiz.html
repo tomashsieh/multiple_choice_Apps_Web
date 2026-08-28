@@ -223,7 +223,6 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 
 .result-status--passed { color: var(--correct-fg); font-weight: 600; }
-.result-status--failed { color: var(--incorrect-fg); font-weight: 600; }
 
 .notice {
   background: var(--warn-bg);
@@ -451,7 +450,9 @@ const state = {
   progress: null,
   currentMateriaIndex: -1,
   currentLevelIndex: -1,
-  sessionQuestions: [],
+  checkpointSets: [],       // array de arrays de Question (sin barajar); fijado en startLevel()
+  currentCheckpointIndex: 0,
+  sessionQuestions: [],     // preguntas ya barajadas del checkpoint activo (no del nivel completo)
   currentQuestionIndex: 0,
   correctCount: 0,
   answered: false,
@@ -580,10 +581,12 @@ function renderLevels() {
     const aprobado = materiaProgress.passedLevels.includes(level.number);
     const deshabilitado = sinPreguntas || bloqueado;
 
+    const checkpointCount = computeCheckpointSizes(level.questions.length).length;
+
     let meta;
     if (sinPreguntas) meta = 'Sin preguntas válidas — revisá la consola';
     else if (bloqueado) meta = '🔒 Aprobá el nivel anterior para desbloquear';
-    else meta = `${level.questions.length} pregunta(s)`;
+    else meta = `${level.questions.length} pregunta(s)` + (checkpointCount > 1 ? ` · ${checkpointCount} checkpoints` : '');
 
     const tile = document.createElement('button');
     tile.className = 'card tile' + (deshabilitado ? ' tile--locked' : '');
@@ -625,9 +628,13 @@ function renderQuestion() {
   const card = document.createElement('div');
   card.className = 'card';
 
+  const checkpointInfo = state.checkpointSets.length > 1
+    ? ` · Checkpoint ${state.currentCheckpointIndex + 1} de ${state.checkpointSets.length}`
+    : '';
+
   const progress = document.createElement('div');
   progress.className = 'question-progress';
-  progress.textContent = `${currentMateria().nombre} · Nivel ${currentLevel().number} · Pregunta ${state.currentQuestionIndex + 1} de ${total}`;
+  progress.textContent = `${currentMateria().nombre} · Nivel ${currentLevel().number}${checkpointInfo} · Pregunta ${state.currentQuestionIndex + 1} de ${total}`;
   card.appendChild(progress);
 
   const text = document.createElement('div');
@@ -663,14 +670,25 @@ function renderQuestion() {
     const acerto = question.options.some(o => o.isCorrect && o.letter === state.selectedLetter);
     const feedback = document.createElement('div');
     feedback.className = 'feedback ' + (acerto ? 'feedback--correct' : 'feedback--incorrect');
-    feedback.textContent = acerto ? '¡Correcto!' : 'Incorrecto — la respuesta correcta está marcada en verde.';
+    feedback.textContent = acerto
+      ? '¡Correcto!'
+      : 'Incorrecto — la respuesta correcta está marcada en verde. Vas a reintentar este checkpoint desde el principio.';
     card.appendChild(feedback);
+
+    const esUltimaPreguntaDelCheckpoint = state.currentQuestionIndex + 1 === total;
+    const esUltimoCheckpoint = state.currentCheckpointIndex + 1 === state.checkpointSets.length;
+
+    let etiquetaBoton;
+    if (!acerto) etiquetaBoton = 'Reintentar checkpoint';
+    else if (!esUltimaPreguntaDelCheckpoint) etiquetaBoton = 'Siguiente pregunta';
+    else if (!esUltimoCheckpoint) etiquetaBoton = 'Siguiente checkpoint';
+    else etiquetaBoton = 'Ver resultado';
 
     const row = document.createElement('div');
     row.className = 'btn-row';
     const next = document.createElement('button');
     next.className = 'btn-primary';
-    next.textContent = state.currentQuestionIndex + 1 < total ? 'Siguiente pregunta' : 'Ver resultado';
+    next.textContent = etiquetaBoton;
     next.addEventListener('click', goToNextQuestion);
     row.appendChild(next);
     card.appendChild(row);
@@ -679,40 +697,36 @@ function renderQuestion() {
   app.appendChild(card);
 }
 
+// Con checkpoints, llegar a esta pantalla implica haber acertado el 100% del
+// nivel (cada checkpoint solo se abandona una vez respondido entero sin
+// fallar) — por eso no existe un desenlace de "no aprobado" que mostrar acá.
 function renderResult() {
   const materia = currentMateria();
   const level = currentLevel();
-  const total = state.sessionQuestions.length;
-  const passed = state.correctCount === total;
   const nextLevel = materia.levels[state.currentLevelIndex + 1];
 
   const card = document.createElement('div');
   card.className = 'card';
   card.innerHTML =
     `<h2>Nivel ${level.number}: ${escapeHtml(level.name)}</h2>` +
-    `<div class="result-score">${state.correctCount}/${total}</div>` +
-    `<p class="${passed ? 'result-status--passed' : 'result-status--failed'}">` +
-    (passed
-      ? '¡Nivel aprobado! Se desbloqueó el siguiente nivel.'
-      : 'Nivel no aprobado. Se necesita el 100% de aciertos.') +
-    '</p>';
+    `<div class="result-score">${state.correctCount}/${state.correctCount}</div>` +
+    `<p class="result-status--passed">¡Nivel aprobado!${nextLevel ? ' Se desbloqueó el siguiente nivel.' : ''}</p>`;
 
   const row = document.createElement('div');
   row.className = 'btn-row';
 
-  if (!passed) {
-    const retry = document.createElement('button');
-    retry.className = 'btn-primary';
-    retry.textContent = 'Reintentar nivel';
-    retry.addEventListener('click', () => startLevel(state.currentLevelIndex));
-    row.appendChild(retry);
-  } else if (nextLevel && nextLevel.questions.length > 0) {
+  if (nextLevel && nextLevel.questions.length > 0) {
     const next = document.createElement('button');
     next.className = 'btn-primary';
     next.textContent = `Continuar al nivel ${nextLevel.number}`;
     next.addEventListener('click', () => startLevel(state.currentLevelIndex + 1));
     row.appendChild(next);
   }
+
+  const again = document.createElement('button');
+  again.textContent = 'Jugar de nuevo';
+  again.addEventListener('click', () => startLevel(state.currentLevelIndex));
+  row.appendChild(again);
 
   const back = document.createElement('button');
   back.textContent = 'Volver a los niveles';
@@ -733,21 +747,64 @@ function openMateria(index) {
   render();
 }
 
-// Baraja preguntas y opciones en cada intento (incluido cada reintento).
-function buildSessionQuestions(level) {
-  return shuffleArray(level.questions).map(question => ({
+// Tamaños de los checkpoints de un nivel según su cantidad de preguntas.
+// >=4 preguntas → siempre 4 bloques, lo más parejos posible (ej. 33 → [9,8,8,8]).
+// <4 preguntas → un único checkpoint con todas (no se fuerzan bloques vacíos).
+function computeCheckpointSizes(total) {
+  if (total < 4) return [total];
+  const base = Math.floor(total / 4);
+  const remainder = total % 4;
+  return Array.from({ length: 4 }, (_, i) => base + (i < remainder ? 1 : 0));
+}
+
+// Baraja TODAS las preguntas del nivel una única vez y las reparte en
+// checkpoints según computeCheckpointSizes. Esa repartición (qué pregunta cae
+// en qué checkpoint) queda fija para todo el intento del nivel; lo que se
+// vuelve a barajar en cada reintento es solo el contenido del checkpoint fallado.
+function splitIntoCheckpoints(questions) {
+  const shuffled = shuffleArray(questions);
+  const sizes = computeCheckpointSizes(shuffled.length);
+  const checkpoints = [];
+  let offset = 0;
+  for (const size of sizes) {
+    checkpoints.push(shuffled.slice(offset, offset + size));
+    offset += size;
+  }
+  return checkpoints;
+}
+
+// Baraja el orden de las preguntas de UN checkpoint y las opciones de cada
+// una. Se llama tanto al entrar por primera vez a un checkpoint como en cada
+// reintento tras fallar una pregunta suya.
+function shuffleCheckpointForAttempt(checkpointQuestions) {
+  return shuffleArray(checkpointQuestions).map(question => ({
     text: question.text,
     options: shuffleArray(question.options),
   }));
 }
 
-function startLevel(levelIndex) {
-  state.currentLevelIndex = levelIndex;
-  state.sessionQuestions = buildSessionQuestions(currentLevel());
+// Cuánto ya quedó asegurado en checkpoints previos ya completados sin fallar.
+function getBankedCorrectCount() {
+  return state.checkpointSets
+    .slice(0, state.currentCheckpointIndex)
+    .reduce((sum, checkpoint) => sum + checkpoint.length, 0);
+}
+
+// Entra (o reintenta) un checkpoint: rebaraja su contenido y resetea el
+// progreso de ESTE checkpoint, sin tocar lo ya asegurado de los anteriores.
+function enterCheckpoint(index) {
+  state.currentCheckpointIndex = index;
+  state.sessionQuestions = shuffleCheckpointForAttempt(state.checkpointSets[index]);
   state.currentQuestionIndex = 0;
-  state.correctCount = 0;
+  state.correctCount = getBankedCorrectCount();
   state.answered = false;
   state.selectedLetter = null;
+}
+
+function startLevel(levelIndex) {
+  state.currentLevelIndex = levelIndex;
+  state.checkpointSets = splitIntoCheckpoints(currentLevel().questions);
+  enterCheckpoint(0);
   state.screen = 'question';
   render();
 }
@@ -761,10 +818,24 @@ function handleOptionClick(option) {
 }
 
 function goToNextQuestion() {
+  const question = state.sessionQuestions[state.currentQuestionIndex];
+  const acerto = question.options.some(o => o.isCorrect && o.letter === state.selectedLetter);
+
+  if (!acerto) {
+    // Falló una pregunta del checkpoint: se reinicia ESE checkpoint desde el
+    // principio, con su orden de preguntas y opciones vueltos a barajar.
+    enterCheckpoint(state.currentCheckpointIndex);
+    render();
+    return;
+  }
+
   if (state.currentQuestionIndex + 1 < state.sessionQuestions.length) {
     state.currentQuestionIndex++;
     state.answered = false;
     state.selectedLetter = null;
+    render();
+  } else if (state.currentCheckpointIndex + 1 < state.checkpointSets.length) {
+    enterCheckpoint(state.currentCheckpointIndex + 1);
     render();
   } else {
     finishLevel();
@@ -772,13 +843,8 @@ function goToNextQuestion() {
 }
 
 function finishLevel() {
-  recordAttempt(
-    currentMateria().id,
-    currentLevel().number,
-    state.correctCount,
-    state.sessionQuestions.length,
-    state.progress
-  );
+  const total = currentLevel().questions.length;
+  recordAttempt(currentMateria().id, currentLevel().number, total, total, state.progress);
   state.screen = 'result';
   render();
 }

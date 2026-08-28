@@ -18,8 +18,9 @@ README.md        ← este archivo
 
 1. **Materias**: elegís la materia que querés repasar.
 2. **Niveles**: cada nivel es una clase o tema. El nivel 1 siempre está disponible; el resto se desbloquea al aprobar el anterior. Los bloqueados aparecen atenuados con un candado 🔒 y no se pueden abrir.
-3. **Preguntas**: se juegan todas las preguntas del nivel, en orden aleatorio, y con las 4 opciones también mezcladas. Después de responder ves enseguida si acertaste; si fallaste, se resalta en verde cuál era la correcta. Avanzás con el botón "Siguiente pregunta" (no hay temporizador en ningún momento).
-4. **Resultado**: se muestra el puntaje (X/total). **Un nivel se aprueba solo con el 100% de aciertos.** Si no aprobás, podés reintentar el mismo nivel (se vuelven a barajar preguntas y opciones). Si aprobás, se desbloquea el siguiente y podés continuar o volver a la lista de niveles.
+3. **Checkpoints**: las preguntas de cada nivel se agrupan en **4 checkpoints** (bloques) lo más parejos posible — por ejemplo, un nivel de 33 preguntas queda en bloques de 9, 8, 8 y 8. Si el nivel tiene menos de 4 preguntas, va todo en un único checkpoint.
+4. **Preguntas**: dentro de un checkpoint, sus preguntas se juegan en orden aleatorio y con las 4 opciones también mezcladas. Después de responder ves enseguida si acertaste; si fallaste, se resalta en verde cuál era la correcta y **se reinicia ese checkpoint desde el principio** (se vuelven a barajar sus preguntas y opciones) — no perdés lo ya aprobado en checkpoints anteriores, ni se te obliga a rehacer el nivel entero por un solo error. Avanzás con un botón (no hay temporizador en ningún momento).
+5. **Resultado**: al completar los 4 checkpoints el nivel siempre queda aprobado (con checkpoints es imposible terminarlo sin haber acertado cada pregunta, aunque haya sido en un reintento) y se desbloquea el siguiente. Desde ahí podés continuar al siguiente nivel, jugar de nuevo este por repasar, o volver a la lista de niveles.
 
 ---
 
