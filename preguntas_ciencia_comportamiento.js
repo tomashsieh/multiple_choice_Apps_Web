@@ -732,4 +732,192 @@ a) Ocurre únicamente cuando la persona desconoce los beneficios reales de actua
 *b) Es la distancia entre lo que planeamos hacer y lo que realmente terminamos haciendo
 c) Es la diferencia entre las creencias de una persona y sus conocimientos previos
 d) Es un fenómeno que solo afecta a las decisiones que involucran dinero
+
+## Nivel 4: Explorar y Definir
+
+1. ¿Cuál es el objetivo principal de esta etapa del proceso, según el material?
+*a) Caracterizar el comportamiento actual y definir el comportamiento deseado
+b) Diseñar un prototipo de la solución final
+c) Medir el impacto de una intervención ya implementada
+d) Elegir la mejor herramienta tecnológica disponible para escalar el proyecto
+
+2. Según el esquema del doble diamante presentado, ¿qué etapas conforman el "espacio para el problema"?
+a) Diseñar y Evaluar
+*b) Explorar y Definir
+c) Evaluar y Escalar
+d) Definir y Diseñar
+
+3. Dentro del "espacio para la solución", ¿qué etapas se agrupan en ese diamante?
+a) Explorar y Definir
+b) Descubrir y Entregar
+*c) Diseñar y Evaluar
+d) Definir y Escalar
+
+4. En el doble diamante, la etapa "Descubrir" (dentro de Explorar) se caracteriza por ser:
+a) Convergente, centrada en definir con precisión el problema
+b) Convergente, centrada en priorizar las métricas de impacto
+c) Divergente, centrada en construir un producto mínimo viable de manera rápida
+*d) Divergente, centrada en mapear el sistema y el campo
+
+5. La etapa "Entregar" (dentro de Evaluar) se caracteriza por ser convergente y enfocarse en:
+*a) El producto mínimo viable y las métricas
+b) La lluvia de ideas de soluciones posibles
+c) El mapeo del sistema y los puntos de palanca
+d) El viaje del usuario y el prototipado rápido
+
+6. ¿Qué diferencia principal existe entre el marco teórico y el estado del arte?
+a) El marco teórico se basa siempre únicamente en datos estadísticos, mientras que el estado del arte no utiliza ninguna fuente académica
+*b) El estado del arte relevanta lo investigado sobre el problema, mientras que el marco teórico define desde qué lugar se mira esa evidencia
+c) El estado del arte es un paso opcional dentro de la investigación, mientras que el marco teórico resulta obligatorio en cualquier trabajo académico serio
+d) El marco teórico incluye exclusivamente artículos y libros académicos, mientras que el estado del arte se limita a datasets y estadísticas
+
+7. ¿En qué se diferencian las fuentes de contexto de las fuentes científicas?
+a) Las de contexto son siempre más confiables que las científicas
+b) Las fuentes científicas nunca incluyen datos cuantitativos ni estadísticas
+*c) En su proceso de validación, no en su utilidad para la investigación
+d) Las fuentes de contexto no pueden usarse nunca para situar un problema real
+
+8. ¿Por qué confiamos en un artículo publicado en una revista con revisión por pares?
+a) Porque fue escrito por un autor muy reconocido y con muchos seguidores
+b) Porque no puede ser refutado por la comunidad científica
+c) Porque no requiere contrastarse nunca con ninguna evidencia posterior
+*d) Porque fue evaluado críticamente por otros expertos antes de publicarse
+
+9. Dentro de los papers de "producción de evidencia", ¿qué distingue a un estudio experimental de uno observacional?
+*a) El experimental interviene para ver qué pasa; el observacional describe cómo es el mundo
+b) El experimental nunca usa datos originales propios, sino que siempre retoma información ya publicada anteriormente
+c) El observacional siempre combina resultados numéricos de otros estudios ya realizados anteriormente
+d) El observacional propone y valida nuevos instrumentos de medición como cuestionarios
+
+10. ¿Cuál de los siguientes tipos de síntesis de evidencia sigue reglas explícitas de búsqueda, inclusión y exclusión para reducir sesgos?
+a) La revisión narrativa clásica
+*b) La revisión sistemática y explícita
+c) El paper de interpretación teórica
+d) El paper de metodología aplicada
+
+11. Un meta-análisis se define como:
+a) Una revisión narrativa sin ningún método explícito de búsqueda ni de selección muy clara
+b) Un estudio experimental que interviene sobre una muestra para medir efectos
+*c) Una revisión sistemática que además combina los resultados en un efecto estadístico promedio
+d) Un paper de metodología que valida un nuevo instrumento de medición
+
+12. Los papers de "interpretación" se fundamentan principalmente en:
+a) Datos originales recolectados directamente por el propio autor del estudio
+b) La validación estadística rigurosa de un instrumento de medición nuevo
+c) Encuestas aplicadas directamente a una muestra amplia y representativa de la población de interés
+*d) La expertise del autor, la evidencia existente y la coherencia del argumento
+
+13. ¿Qué buscan validar o mejorar los papers de "metodología"?
+*a) Métodos, herramientas o protocolos de investigación científica
+b) Las políticas públicas de un problema
+c) Las hipótesis sustantivas sobre un fenómeno social
+d) El estado del arte de un campo científico
+
+14. El sesgo de confirmación consiste en:
+a) Confiar únicamente en fuentes con revisión por pares
+*b) Buscar e interpretar información de manera que confirme creencias preexistentes
+c) Priorizar preguntas neutrales al momento de investigar
+d) Contrastar siempre la evidencia encontrada con toda la literatura académica existente
+
+15. Respecto al acceso a la información científica, ¿qué distingue al acceso restringido (paywall) del acceso abierto?
+a) El acceso restringido siempre corresponde a fuentes de contexto muy específicas
+b) El acceso abierto nunca pasó por ningún proceso formal de revisión por pares
+*c) El acceso restringido exige un pago o suscripción para consultar el material
+d) El acceso abierto solo aplica a algunos datasets gubernamentales específicos
+
+16. Las observaciones naturales se caracterizan por:
+a) Reunir a un grupo grande de participantes para debatir libremente sobre un tema en general
+b) Preguntar directamente a las personas sobre sus actitudes y opiniones en profundidad
+c) Requerir al menos dos personas conversando sobre un tema puntual y específico
+*d) Registrar el comportamiento de los sujetos en su entorno habitual, minimizando la intervención
+
+17. Un focus group se define como una técnica en la que se:
+*a) Reúne a un grupo de participantes para responder preguntas en un entorno moderado
+b) Registra minuciosamente el comportamiento de una persona sin que esta lo note en absoluto
+c) Recopila información mediante una conversación bastante abierta entre dos personas solamente
+d) Aplica una escala ya validada para medir un concepto abstracto y complejo
+
+18. ¿Cuál de las siguientes es una característica del análisis cualitativo, según el material?
+a) Busca siempre generalizar los resultados a toda la población general
+*b) Reconoce la perspectiva y los sesgos del propio investigador
+c) Siempre involucra una gran cantidad de participantes
+d) Elimina la complejidad del fenómeno estudiado
+
+19. Al elegir la estructura de una entrevista, ¿qué relación se plantea entre estructura y conocimiento previo del tema?
+a) A mayor conocimiento del tema, se recomienda menos estructura y más flexibilidad
+b) La estructura de la entrevista no depende del conocimiento previo del tema
+*c) A menor conocimiento del tema, se recomienda menos estructura y más flexibilidad
+d) A mayor conocimiento del tema, se recomienda eliminar por completo la entrevista
+
+20. Al desarrollar la hipótesis dentro del protocolo de una entrevista en profundidad, esta debe ser:
+a) Amplia, general y no verificable
+b) Redactada únicamente en términos cualitativos
+c) Idéntica a la pregunta de investigación original
+*d) Clara, específica y falsable en su planteo
+
+21. Según las buenas prácticas para entrevistas en profundidad, durante la entrevista se recomienda:
+*a) Escuchar más de lo que se habla, en una proporción cercana a 80/20
+b) Hablar más de lo que se escucha para guiar al entrevistado en todo momento
+c) Completar las respuestas del entrevistado cuando duda o se traba
+d) Evitar tomar notas para no interrumpir el registro de audio
+
+22. El Behavioral Journey Map se enfoca específicamente en:
+a) Los datos demográficos generales de la población objetivo del proyecto
+*b) Los comportamientos y decisiones de la persona, exponiendo barreras y sesgos
+c) La lista completa de todos los papers consultados durante toda la investigación
+d) El presupuesto total necesario para implementar la solución propuesta
+
+23. El modelo COM-B establece que para que un comportamiento ocurra:
+a) Alcanza con que una sola de las tres áreas esté siempre bien presente en algún momento
+b) Solo la motivación reflexiva determina si el comportamiento finalmente se realiza o no
+*c) Deben abordarse las tres áreas, ya que si una falla el comportamiento probablemente no ocurra
+d) La capacidad física siempre pesa más que las demás áreas del modelo
+
+24. Dentro del modelo COM-B, la "Oportunidad" puede ser:
+a) Física o psicológica
+b) Reflexiva o automática
+c) Observable o específica
+*d) Social o física
+
+25. En el ejemplo "tener amigos que te inviten a salir a correr en grupo", ¿a qué componente del modelo COM-B corresponde?
+*a) Oportunidad social
+b) Capacidad física
+c) Motivación automática
+d) Motivación reflexiva
+
+26. Según el material, ¿cuál de las siguientes opciones sí es un comportamiento?
+a) Sentirse seguro
+*b) Caminar en el parque
+c) Ser más empático
+d) Querer cambiar muchas cosas en general
+
+27. ¿Por qué "perder peso" no se considera un comportamiento en sí mismo?
+a) Porque es un estado interno que no puede medirse
+b) Porque no involucra a ningún actor identificable
+*c) Porque puede ser causado por múltiples comportamientos distintos
+d) Porque no puede operacionalizarse de ninguna manera
+
+28. Las tres características que debe cumplir un comportamiento bien definido son:
+a) Observable, Medible y Falsable
+b) Divergente, Convergente y Escalable
+c) Reflexivo, Automático y Social
+*d) Asignable, Observable y Específico
+
+29. La característica "Asignable" de un comportamiento implica identificar:
+*a) Los actores involucrados y quiénes tienen capacidad de modificarlo
+b) La escala ya validada que finalmente se usará para medirlo
+c) El presupuesto total disponible para intervenirlo directamente
+d) La cantidad de participantes necesarios para estudiarlo
+
+30. La operacionalización consiste en:
+a) Elegir la técnica de recolección de datos más barata disponible
+*b) Transformar conceptos abstractos en variables concretas y medibles
+c) Reemplazar un comportamiento por un objetivo general equivalente
+d) Definir el tamaño de la muestra de un estudio experimental
+
+31. ¿Cuál de las siguientes opciones corresponde a un comportamiento y no a un objetivo general?
+a) Cuidar bien el medio ambiente en la vida cotidiana de todos
+b) Ser una persona más productiva en el trabajo
+*c) Comer 4 porciones de frutas y verduras al día
+d) Sentirse bien con uno mismo en general
 `;
