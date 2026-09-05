@@ -554,7 +554,7 @@ function render() {
 
 function renderParseNotice() {
   const conErrores = state.materias.filter(
-    m => m.skippedCount > 0 || m.levels.some(l => l.questions.length === 0)
+    m => m.skippedCount > 0 || m.levels.some(l => levelQuestions(l).length === 0)
   );
   if (conErrores.length === 0) return null;
 
