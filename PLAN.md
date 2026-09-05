@@ -12,8 +12,15 @@
 - 2026-08-19 — App de estudio multiple-choice multi-materia (Arquitectura de Aplicaciones Web)
 - 2026-08-28 — Cargar contenido real de "Arquitectura de Aplicaciones Web" (4 niveles) y crear la materia "Ciencia del Comportamiento Aplicada" (3 niveles)
 - 2026-08-28 — Checkpoints dentro de cada nivel
+- 2026-09-05 — Checkpoints agrupados por tema (`### Tema:`) en vez de por tamaño parejo
 
 ## Bitácora de decisiones
+
+### 2026-09-05 — Checkpoints por tema declarado, no por tamaño calculado
+**Contexto:** los checkpoints (4 bloques parejos, calculados sobre el nivel ya barajado) no tenían ninguna relación con el contenido: dos preguntas de temas distintos podían caer en el mismo bloque, y la composición cambiaba en cada intento. El usuario pidió que los checkpoints reflejen el tema real de las preguntas.
+**Decisión:** nuevo marcador de formato `### Tema: Nombre del tema` dentro de un nivel; cada tema declarado es un checkpoint, jugado en el orden en que aparece en el archivo (no se rebaraja el orden de los temas, solo las preguntas y opciones dentro de cada uno). La cantidad de checkpoints ya no es fija en 4: es la cantidad de temas que tenga el nivel. Se eliminaron `computeCheckpointSizes` y `splitIntoCheckpoints`; `startLevel` toma los checkpoints directo de `level.topics`, armados por el parser. Un nivel sin ningún `### Tema:` (como los niveles ya cargados hoy en `preguntas.js` y `preguntas_ciencia_comportamiento.js`) se sigue jugando como un único checkpoint con todas sus preguntas, igual que antes de existir los checkpoints — degradación sin romper nada, consistente con el resto del parser.
+**Alternativas descartadas:** exigir que todo nivel tenga al menos un `### Tema:` y romper/advertir fuerte si no lo tiene (se descartó por innecesariamente disruptivo con el contenido ya cargado); descartar las preguntas escritas antes del primer `### Tema:` de un nivel que sí declara temas (se descartó por perder contenido por un error de organización menor del archivo; en cambio se agrupan en un checkpoint sin nombre visible al principio).
+**Revisión post-implementación:** salió tal cual lo planeado. Nota para el usuario: los niveles ya cargados hoy no tienen `### Tema:`, así que se juegan como un único checkpoint hasta que se resuban con esos headers agregados.
 
 ### 2026-08-19 — Registro manual de materias en vez de descubrimiento automático
 **Contexto:** la app tiene que abrirse con doble clic desde `file://`, sin servidor. Se pidió poder extender la app a otras materias con el tiempo.

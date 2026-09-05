@@ -46,7 +46,20 @@
  *
  * 5. Las preguntas dentro de un nivel se separan por una línea en blanco.
  *
- * Ejemplo mínimo de una pregunta bien formada:
+ * 6. (Opcional) Dentro de un nivel, las preguntas se pueden agrupar por tema
+ *    con una línea:
+ *      ### Tema: Nombre del tema
+ *    Todas las preguntas hasta el próximo "### Tema:" (o el fin del nivel)
+ *    pertenecen a ese tema. Cada tema se convierte en un "checkpoint": al
+ *    jugar el nivel se van pasando en el orden en que están escritos en el
+ *    archivo, y si se falla una pregunta se reinicia SOLO el tema donde
+ *    estabas (rebarajando sus preguntas y opciones), no el nivel entero. Si
+ *    un nivel no usa "### Tema:" en absoluto, se juega entero como un único
+ *    checkpoint (sin partir en bloques).
+ *
+ * Ejemplo mínimo de una pregunta bien formada, agrupada por tema:
+ *
+ *   ### Tema: Patrones arquitectónicos
  *
  *   1. ¿Cuál de los siguientes es un patrón arquitectónico?
  *   a) Bubble sort
@@ -57,7 +70,9 @@
  * INSTRUCCIONES PARA GENERAR CONTENIDO NUEVO CON OTRO CHAT/LLM:
  * Pedile que genere preguntas siguiendo EXACTAMENTE este formato, sin
  * markdown adicional, sin numeración fuera de la indicada, con contenido
- * de la materia correspondiente. Cada nivel = un tema o clase distinta.
+ * de la materia correspondiente. Cada nivel = un tema o clase distinta, y
+ * dentro de cada nivel agrupe las preguntas en "### Tema: Nombre" según el
+ * subtema real del material (no en bloques de tamaño parejo ni al azar).
  * Recordarle que no omita el asterisco en la opción correcta y que
  * verifique que cada pregunta tenga una única opción marcada como tal.
  * ============================================================================
